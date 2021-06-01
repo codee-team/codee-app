@@ -2,7 +2,7 @@ package me.neon.codee.core.project
 
 private val projectTypesSource: MutableSet<AbstractProjectType> = mutableSetOf()
 
-val projectTypes: Set<AbstractProjectType> = mutableSetOf()
+val projectTypes: Set<AbstractProjectType> = projectTypesSource.toSet()
 
 /**
  * Registers project type.

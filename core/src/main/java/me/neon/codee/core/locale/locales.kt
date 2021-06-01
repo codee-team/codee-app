@@ -1,11 +1,11 @@
 package me.neon.codee.core.locale
 
-private val localesSource: MutableSet<AbstractLocale> = mutableSetOf()
+private val localesSource: MutableSet<AbstractLocale> = mutableSetOf(EnglishLocale)
 
 /**
  * All locales that were registered.
  */
-val locales: Set<AbstractLocale> get() = localesSource
+val locales: Set<AbstractLocale> get() = localesSource.toSet()
 
 /**
  * Registers locale for app translation.

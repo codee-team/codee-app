@@ -6,12 +6,12 @@ private val themesSource: MutableSet<AbstractTheme> = mutableSetOf(LightTheme(),
  * Consists of all loaded themes.
  * @return [Set] with [AbstractTheme].
  */
-val themes: Set<AbstractTheme> get() = themesSource
+val themes: Set<AbstractTheme> get() = themesSource.toSet()
 
 /**
  * Registers new theme.
- * @param abstractTheme - implemented [AbstractTheme] with theme info.
+ * @param theme - implemented [AbstractTheme] with theme info.
  * @return [Boolean] is added or not.
  */
-fun registerTheme(abstractTheme: AbstractTheme) =
-    themesSource.add(abstractTheme)
+fun registerTheme(theme: AbstractTheme) =
+    themesSource.add(theme)

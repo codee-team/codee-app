@@ -1,6 +1,7 @@
 package me.neon.codee
 
 import android.app.Application
+import me.neon.codee.core.initializeApplication
 
 /**
  * Base application class.
@@ -8,5 +9,6 @@ import android.app.Application
 class CodeeApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+        initializeApplication(this)
     }
 }

@@ -58,10 +58,9 @@ dependencies {
     implementation(kotlin(kScriptRuntime))
     implementation(codeeCore)
     implementation(kotlin("reflect"))
-    implementation(kotlin("compiler-embeddable"))
     implementation(kotlin("script-util"))
     implementation(kotlin("scripting-compiler-embeddable"))
-    implementation(group = "org.jetbrains.kotlin", name = "kotlin-scripting-dependencies", version = "1.5.0")
+    implementation(group = "org.jetbrains.kotlin", name = "kotlin-scripting-dependencies", version = "1.4.32")
 }
 
 with(tasks) {

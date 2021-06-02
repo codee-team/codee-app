@@ -28,7 +28,9 @@ data class PluginContext internal constructor(
      */
     suspend fun requestPermission(permission: Permission): Boolean {
         val plugin = plugins.first { it.uuid == pluginId }
-        return application.onPluginPermissionRequest.onRequest(plugin, permission)
+        return application.onPluginPermissionRequest.onRequest(plugin, permission).also {
+            if(it) issuedPermitsSource += permission
+        }
     }
 
 }

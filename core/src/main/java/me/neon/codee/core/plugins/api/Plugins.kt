@@ -1,16 +1,11 @@
 package me.neon.codee.core.plugins.api
 
 import me.neon.codee.core.annotations.OnlyPermittedCalls
-import me.neon.codee.core.application
 import me.neon.codee.core.plugins.Plugin
 import me.neon.codee.core.plugins.PluginContext
 import me.neon.codee.core.plugins.hasPermission
-import me.neon.codee.core.plugins.permissions.PermissionException
 import me.neon.codee.core.plugins.permissions.RemovePluginsPermission
-import me.neon.codee.core.plugins.plugin
-import me.neon.codee.core.plugins.utils.PluginFile
 import randomString
-import java.io.File
 
 private val pluginsSource: MutableList<Plugin> = mutableListOf()
 internal val PLUGIN_CONTEXTS: MutableList<PluginContext> = mutableListOf()
@@ -28,7 +23,7 @@ val plugins: List<Plugin> = pluginsSource.toList()
  * some kind of [Exception] if there was error.
  */
 fun registerPlugin(plugin: Plugin): Result<PluginContext> {
-    if(plugins.any { it.uuid == plugin.uuid })
+    if (plugins.any { it.uuid == plugin.uuid })
         return Result.failure(PluginWithSuchIdExistsException(plugin.uuid))
     pluginsSource.add(plugin)
     val token = PluginContext(randomString(32), plugin.uuid)
@@ -45,7 +40,7 @@ fun registerPlugin(plugin: Plugin): Result<PluginContext> {
  */
 @OnlyPermittedCalls
 fun PluginContext.removePlugin(id: String): Boolean {
-    if(!hasPermission(RemovePluginsPermission) && pluginId != id)
+    if (!hasPermission(RemovePluginsPermission) && pluginId != id)
         return false
     return pluginsSource.removeAll { it.uuid == id }
 }
@@ -54,5 +49,5 @@ fun PluginContext.removePlugin(id: String): Boolean {
  * Throws if plugin with such id already exists.
  * @param id - plugin uuid.
  */
-class PluginWithSuchIdExistsException internal constructor(id: String)
-    : Exception("Plugin with id $id already loaded.")
+class PluginWithSuchIdExistsException internal constructor(id: String) :
+    Exception("Plugin with id $id already loaded.")

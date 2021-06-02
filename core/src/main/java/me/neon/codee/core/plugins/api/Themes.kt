@@ -26,12 +26,12 @@ val themes: List<ThemeContainer> get() = themesSource.toList()
  * @param theme - theme colors.
  * @return [Result] with [Unit].
  */
-fun PluginContext.registerTheme(name: String, theme: Theme) : Result<Unit> {
+fun PluginContext.registerTheme(name: String, theme: Theme): Result<Unit> {
     val plugin = plugins.firstOrNull { it.uuid == pluginId }
         ?: return Result.failure(NoSuchElementException("No plugin with id $pluginId registered."))
-    if(themes.any { it.name == name })
+    if (themes.any { it.name == name })
         return Result.failure(ThemeAlreadyExistsException(name))
-    return if(themesSource.add(ThemeContainer(name, theme, plugin)))
+    return if (themesSource.add(ThemeContainer(name, theme, plugin)))
         Result.success(Unit)
     else Result.failure(IllegalStateException("Plugin with id $pluginId wasn't added. Seems like internal error."))
 }
@@ -44,7 +44,7 @@ fun PluginContext.registerTheme(name: String, theme: Theme) : Result<Unit> {
  */
 @OnlyPermittedCalls
 fun PluginContext.removeTheme(name: String): Boolean {
-    if(!hasPermission(RemoveThemesPermission))
+    if (!hasPermission(RemoveThemesPermission))
         return false
     return themesSource.removeAll { it.name == name }
 }

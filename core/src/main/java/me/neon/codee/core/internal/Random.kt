@@ -1,5 +1,3 @@
-import java.util.*
-
 private val chars = ('A'..'Z') + ('a'..'z') + ('0'..'9')
 
 /**

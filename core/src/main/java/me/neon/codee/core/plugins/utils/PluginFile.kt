@@ -13,10 +13,15 @@ class PluginFile internal constructor(internal val file: File, private val conte
      * @return [Result] with list of files or with exception.
      */
     suspend fun files(): Result<List<PluginFile>> = withContext(Dispatchers.IO) {
-        if(!checkAccess(file, context))
-            return@withContext Result.failure(NoPermissionToAccessFile(context.pluginId, file.absolutePath))
+        if (!checkAccess(file, context))
+            return@withContext Result.failure(
+                NoPermissionToAccessFile(
+                    context.pluginId,
+                    file.absolutePath
+                )
+            )
 
-        if(!file.isDirectory)
+        if (!file.isDirectory)
             return@withContext Result.failure(NotDirectoryException(file.absolutePath))
 
         val files = file.listFiles()?.toList()?.map {
@@ -48,9 +53,14 @@ class PluginFile internal constructor(internal val file: File, private val conte
      */
     @Suppress("MemberVisibilityCanBePrivate")
     suspend fun readBytes(): Result<ByteArray> = withContext(Dispatchers.IO) {
-        if(!checkAccess(file, context))
-            return@withContext Result.failure(NoPermissionToAccessFile(context.pluginId, file.absolutePath))
-        if(!file.isFile)
+        if (!checkAccess(file, context))
+            return@withContext Result.failure(
+                NoPermissionToAccessFile(
+                    context.pluginId,
+                    file.absolutePath
+                )
+            )
+        if (!file.isFile)
             return@withContext Result.failure(NotFileException(file.absolutePath))
         Result.success(file.readBytes())
     }
@@ -67,9 +77,14 @@ class PluginFile internal constructor(internal val file: File, private val conte
      */
     @Suppress("MemberVisibilityCanBePrivate")
     suspend fun writeBytes(bytes: ByteArray): Result<Unit> = withContext(Dispatchers.IO) {
-        if(!checkAccess(file, context))
-            return@withContext Result.failure(NoPermissionToAccessFile(context.pluginId, file.absolutePath))
-        if(!file.isFile)
+        if (!checkAccess(file, context))
+            return@withContext Result.failure(
+                NoPermissionToAccessFile(
+                    context.pluginId,
+                    file.absolutePath
+                )
+            )
+        if (!file.isFile)
             return@withContext Result.failure(NotFileException(file.absolutePath))
         Result.success(file.writeBytes(bytes))
     }
@@ -80,8 +95,13 @@ class PluginFile internal constructor(internal val file: File, private val conte
      * @return [PluginFile] with new folder.
      */
     suspend fun createFolder(name: String): Result<PluginFile> = withContext(Dispatchers.IO) {
-        if(!checkAccess(file, context))
-            return@withContext Result.failure(NoPermissionToAccessFile(context.pluginId, file.absolutePath))
+        if (!checkAccess(file, context))
+            return@withContext Result.failure(
+                NoPermissionToAccessFile(
+                    context.pluginId,
+                    file.absolutePath
+                )
+            )
         val folder = File(file, name)
         folder.mkdir()
         return@withContext Result.success(PluginFile(folder, context))
@@ -93,11 +113,12 @@ internal fun checkAccess(file: File, context: PluginContext): Boolean {
     return file.absolutePath.startsWith(context.pluginFolder.file.absolutePath)
 }
 
-class NotDirectoryException internal constructor(path: String)
-    : Exception("File is not an directory at path $path.")
+class NotDirectoryException internal constructor(path: String) :
+    Exception("File is not an directory at path $path.")
 
-class NotFileException internal constructor(path: String) : Exception("File at path $path is not an file.")
+class NotFileException internal constructor(path: String) :
+    Exception("File at path $path is not an file.")
 
 @Suppress("MemberVisibilityCanBePrivate", "CanBeParameter")
-class NoPermissionToAccessFile(identify: String, val path: String)
-    : Exception("Plugin with identify $identify does not have permission to access folder at path $path.")
+class NoPermissionToAccessFile(identify: String, val path: String) :
+    Exception("Plugin with identify $identify does not have permission to access folder at path $path.")

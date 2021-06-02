@@ -1,7 +1,8 @@
 @file:Suppress("unused")
-import org.gradle.kotlin.dsl.DependencyHandlerScope
+
 import Version.COMPOSE
 import org.gradle.api.artifacts.Dependency
+import org.gradle.kotlin.dsl.DependencyHandlerScope
 import org.gradle.kotlin.dsl.project
 
 val DependencyHandlerScope.androidKtCore: String

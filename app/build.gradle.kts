@@ -60,7 +60,11 @@ dependencies {
     implementation(kotlin("reflect"))
     implementation(kotlin("script-util"))
     implementation(kotlin("scripting-compiler-embeddable"))
-    implementation(group = "org.jetbrains.kotlin", name = "kotlin-scripting-dependencies", version = "1.4.32")
+    implementation(
+        group = "org.jetbrains.kotlin",
+        name = "kotlin-scripting-dependencies",
+        version = "1.4.32"
+    )
 }
 
 with(tasks) {

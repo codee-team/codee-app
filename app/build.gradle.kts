@@ -66,11 +66,3 @@ dependencies {
         version = "1.4.32"
     )
 }
-
-with(tasks) {
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions {
-            languageVersion = "1.4"
-        }
-    }
-}

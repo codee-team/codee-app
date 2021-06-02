@@ -1,6 +1,6 @@
 package me.neon.codee.core.plugins.theme
 
-sealed interface Theme {
+interface Theme {
     val primary: UInt
     val onPrimary: UInt
     val secondary: UInt

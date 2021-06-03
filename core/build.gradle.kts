@@ -1,5 +1,3 @@
-import org.gradle.util.GUtil.loadProperties
-
 plugins {
     id(Plugin.ANDROID_LIBRARY)
     id(Plugin.KOTLIN_ANDROID)
@@ -8,7 +6,7 @@ plugins {
 
 android {
     compileSdk = 30
-    buildToolsVersion = "30.0.3"
+    buildToolsVersion = ApplicationConfig.BUILD_TOOLS_VERSION
 
     defaultConfig {
         minSdk = ApplicationConfig.MIN_SDK_VERSION
@@ -40,34 +38,10 @@ android {
     }
 }
 
-val deployConfigurationFile = rootProject.file("deploy.properties")
-
-if(deployConfigurationFile.exists()) {
-    val properties = loadProperties(deployConfigurationFile)
-    afterEvaluate {
-        publishing {
-            publications {
-                create<MavenPublication>("release") {
-                    from(components["release"])
-
-                    groupId = ApplicationConfig.PACKAGE
-                    artifactId = "core"
-                    version = Version.APPLICATION_VERSION_NAME
-                }
-            }
-            repositories {
-                maven {
-                    url = uri("sftp://${properties.getProperty("host")}:22/${properties.getProperty("destination")}")
-
-                    credentials {
-                        username = properties.getProperty("user")
-                        password = properties.getProperty("password")
-                    }
-                }
-            }
-        }
-    }
-}
+/**
+ * Enables deploy for `core` module.
+ */
+coreDeploy()
 
 dependencies {
     implementation(androidKtCore)

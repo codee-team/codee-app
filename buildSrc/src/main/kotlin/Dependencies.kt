@@ -3,6 +3,7 @@
 import Version.COMPOSE
 import org.gradle.api.artifacts.Dependency
 import org.gradle.kotlin.dsl.DependencyHandlerScope
+import org.gradle.kotlin.dsl.kotlin
 import org.gradle.kotlin.dsl.project
 
 val DependencyHandlerScope.androidKtCore: String
@@ -35,8 +36,20 @@ val DependencyHandlerScope.composeJUNIT: String
 val DependencyHandlerScope.jUnit: String
     get() = "junit:junit:4.13.2"
 
-val DependencyHandlerScope.kScriptRuntime: String
-    get() = "script-runtime"
+val DependencyHandlerScope.kScriptRuntime: Any
+    get() = kotlin("script-runtime")
+
+val DependencyHandlerScope.reflection: Any
+    get() = kotlin("reflect")
+
+val DependencyHandlerScope.scriptUtil: Any
+    get() = kotlin("script-util")
+
+val DependencyHandlerScope.scriptingCompiler: Any
+    get() = kotlin("scripting-compiler-embeddable")
 
 val DependencyHandlerScope.codeeCore: Dependency
     get() = project(":core")
+
+val DependencyHandlerScope.scriptingDependencies: Any
+    get() = kotlin("kotlin-scripting-dependencies")

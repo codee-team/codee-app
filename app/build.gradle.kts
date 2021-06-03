@@ -5,7 +5,7 @@ plugins {
 
 android {
     compileSdk = 30
-    buildToolsVersion = "30.0.3"
+    buildToolsVersion = ApplicationConfig.BUILD_TOOLS_VERSION
 
     defaultConfig {
         applicationId = ApplicationConfig.PACKAGE
@@ -55,14 +55,10 @@ dependencies {
     implementation(activityCompose)
     testImplementation(jUnit)
     androidTestImplementation(composeJUNIT)
-    implementation(kotlin(kScriptRuntime))
+    implementation(kScriptRuntime)
     implementation(codeeCore)
-    implementation(kotlin("reflect"))
-    implementation(kotlin("script-util"))
-    implementation(kotlin("scripting-compiler-embeddable"))
-    implementation(
-        group = "org.jetbrains.kotlin",
-        name = "kotlin-scripting-dependencies",
-        version = "1.4.32"
-    )
+    implementation(reflection)
+    implementation(scriptUtil)
+    implementation(scriptingCompiler)
+    implementation(scriptingDependencies)
 }

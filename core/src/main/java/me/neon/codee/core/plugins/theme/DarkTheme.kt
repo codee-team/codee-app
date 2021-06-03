@@ -1,8 +1,8 @@
 package me.neon.codee.core.plugins.theme
 
 open class DarkTheme : Theme {
-    override val primary: UInt = TODO()
-    override val onPrimary: UInt = TODO()
-    override val secondary: UInt = TODO()
-    override val onSecondary: UInt = TODO()
+    override val primary: String = "#1F1B24"
+    override val onPrimary: String = "#ffffff"
+    override val secondary: String = "#121212"
+    override val onSecondary: String = "#ffffff"
 }

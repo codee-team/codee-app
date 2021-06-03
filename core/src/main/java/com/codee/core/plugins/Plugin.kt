@@ -1,4 +1,4 @@
-package me.neon.codee.core.plugins
+package com.codee.core.plugins
 
 interface Plugin {
     /**

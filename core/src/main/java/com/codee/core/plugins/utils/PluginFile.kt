@@ -1,9 +1,9 @@
-package me.neon.codee.core.plugins.utils
+package com.codee.core.plugins.utils
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import me.neon.codee.core.plugins.PluginContext
-import me.neon.codee.core.plugins.pluginFolder
+import com.codee.core.plugins.PluginContext
+import com.codee.core.plugins.pluginFolder
 import java.io.File
 
 class PluginFile internal constructor(internal val file: File, private val context: PluginContext) {

@@ -1,6 +1,6 @@
-package me.neon.codee.core
+package com.codee.core
 
-import me.neon.codee.core.plugins.PluginsCommunicator
+import com.codee.core.plugins.PluginsCommunicator
 
 /**
  * Codee app context.

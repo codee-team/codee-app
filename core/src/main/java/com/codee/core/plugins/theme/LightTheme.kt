@@ -1,4 +1,4 @@
-package me.neon.codee.core.plugins.theme
+package com.codee.core.plugins.theme
 
 open class LightTheme : Theme {
     override val primary: String = "#ffffff"

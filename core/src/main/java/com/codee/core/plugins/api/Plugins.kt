@@ -1,10 +1,10 @@
-package me.neon.codee.core.plugins.api
+package com.codee.core.plugins.api
 
-import me.neon.codee.core.annotations.OnlyPermittedCalls
-import me.neon.codee.core.plugins.Plugin
-import me.neon.codee.core.plugins.PluginContext
-import me.neon.codee.core.plugins.hasPermission
-import me.neon.codee.core.plugins.permissions.RemovePluginsPermission
+import com.codee.core.annotations.PermissionRequired
+import com.codee.core.plugins.Plugin
+import com.codee.core.plugins.PluginContext
+import com.codee.core.plugins.hasPermission
+import com.codee.core.plugins.permissions.RemovePluginsPermission
 import randomString
 
 private val pluginsSource: MutableList<Plugin> = mutableListOf()
@@ -38,7 +38,7 @@ fun registerPlugin(plugin: Plugin): Result<PluginContext> {
  * @param id - plugin id from [plugins].
  * @return [Boolean] is plugin removed or not.
  */
-@OnlyPermittedCalls
+@PermissionRequired(RemovePluginsPermission::class)
 fun PluginContext.removePlugin(id: String): Boolean {
     if (!hasPermission(RemovePluginsPermission) && pluginId != id)
         return false

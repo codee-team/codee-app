@@ -1,4 +1,4 @@
-package me.neon.codee.core.plugins.language
+package com.codee.core.plugins.language
 
 interface Strings {
     val appName: String

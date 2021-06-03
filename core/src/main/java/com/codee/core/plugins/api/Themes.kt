@@ -1,13 +1,13 @@
-package me.neon.codee.core.plugins.api
+package com.codee.core.plugins.api
 
-import me.neon.codee.core.annotations.OnlyPermittedCalls
-import me.neon.codee.core.plugins.Plugin
-import me.neon.codee.core.plugins.PluginContext
-import me.neon.codee.core.plugins.hasPermission
-import me.neon.codee.core.plugins.permissions.RemoveThemesPermission
-import me.neon.codee.core.plugins.theme.DarkTheme
-import me.neon.codee.core.plugins.theme.LightTheme
-import me.neon.codee.core.plugins.theme.Theme
+import com.codee.core.annotations.PermissionRequired
+import com.codee.core.plugins.Plugin
+import com.codee.core.plugins.PluginContext
+import com.codee.core.plugins.hasPermission
+import com.codee.core.plugins.permissions.RemoveThemesPermission
+import com.codee.core.plugins.theme.DarkTheme
+import com.codee.core.plugins.theme.LightTheme
+import com.codee.core.plugins.theme.Theme
 
 private val themesSource: MutableList<ThemeContainer> = mutableListOf(
     ThemeContainer("Light", LightTheme(), null),
@@ -42,7 +42,7 @@ fun PluginContext.registerTheme(name: String, theme: Theme): Result<Unit> {
  * @param name - name of theme.
  * @return [Boolean] is removed or not.
  */
-@OnlyPermittedCalls
+@PermissionRequired(RemoveThemesPermission::class)
 fun PluginContext.removeTheme(name: String): Boolean {
     if (!hasPermission(RemoveThemesPermission))
         return false

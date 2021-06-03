@@ -53,3 +53,9 @@ val DependencyHandlerScope.codeeCore: Dependency
 
 val DependencyHandlerScope.scriptingDependencies: Any
     get() = kotlin("kotlin-scripting-dependencies")
+
+val DependencyHandlerScope.androidBuildTools: String
+    get() = "com.android.tools.build:gradle:7.0.0-beta03"
+
+val DependencyHandlerScope.kotlinGradlePlugin: String
+    get() = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN}"

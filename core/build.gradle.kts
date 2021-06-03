@@ -48,11 +48,3 @@ dependencies {
     implementation(appCompat)
     implementation(composeUI)
 }
-
-with(tasks) {
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions {
-            freeCompilerArgs = freeCompilerArgs + "-Xallow-result-return-type"
-        }
-    }
-}

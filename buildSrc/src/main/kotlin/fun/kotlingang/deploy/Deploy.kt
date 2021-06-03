@@ -18,10 +18,11 @@ internal fun deployError(message: String) {
  * Checks properties for null. If it is null, throws [DeployException].
  * @param fields - fields to check.
  */
-internal fun <T> notNullPropertiesOrException(vararg fields: KProperty0<T?>) = fields.forEach { field ->
-    if(field.get() == null)
-        throw DeployException("Field for name `${field.name}` is null. Should be provided for deploy task.")
-}
+internal fun <T> notNullPropertiesOrException(vararg fields: KProperty0<T?>) =
+    fields.forEach { field ->
+        if (field.get() == null)
+            throw DeployException("Field for name `${field.name}` is null. Should be provided for deploy task.")
+    }
 
 /**
  * Deploy task.

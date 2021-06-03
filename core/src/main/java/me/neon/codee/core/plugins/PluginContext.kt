@@ -28,7 +28,7 @@ data class PluginContext internal constructor(
      */
     suspend fun requestPermission(permission: Permission): Boolean {
         return application.onPluginPermissionRequest.onRequest(plugin, permission).also {
-            if(it) issuedPermitsSource += permission
+            if (it) issuedPermitsSource += permission
         }
     }
 

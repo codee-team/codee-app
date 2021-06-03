@@ -1,4 +1,4 @@
-package me.neon.codee.core.plugins.permissions
+package com.codee.core.plugins.permissions
 
 /**
  * Allows plugin to remove plugins in runtime.

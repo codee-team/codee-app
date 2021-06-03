@@ -1,9 +1,9 @@
-package me.neon.codee.core.plugins
+package com.codee.core.plugins
 
-import me.neon.codee.core.application
-import me.neon.codee.core.plugins.api.plugins
-import me.neon.codee.core.plugins.permissions.Permission
-import me.neon.codee.core.plugins.utils.PluginFile
+import com.codee.core.application
+import com.codee.core.plugins.api.plugins
+import com.codee.core.plugins.permissions.Permission
+import com.codee.core.plugins.utils.PluginFile
 import java.io.File
 
 /**
@@ -13,13 +13,13 @@ data class PluginContext internal constructor(
     internal val token: String,
     internal val pluginId: String
 ) {
-    private val issuedPermitsSource: MutableList<Permission> = mutableListOf()
+    private val granterPermissionsSource: MutableList<Permission> = mutableListOf()
 
     /**
      * Permissions that have been granted by the user to the plugin.
      * @return [List] of [Permission] with all granted permissions.
      */
-    val issuedPermits: List<Permission> get() = issuedPermitsSource.toList()
+    val grantedPermissions: List<Permission> get() = granterPermissionsSource.toList()
 
     /**
      * Calls the user to permit the permission.
@@ -28,7 +28,7 @@ data class PluginContext internal constructor(
      */
     suspend fun requestPermission(permission: Permission): Boolean {
         return application.onPluginPermissionRequest.onRequest(plugin, permission).also {
-            if (it) issuedPermitsSource += permission
+            if (it) granterPermissionsSource += permission
         }
     }
 
@@ -46,7 +46,7 @@ val PluginContext.plugin: Plugin get() = plugins.first { it.uuid == pluginId }
  * @return [Boolean] is permission contains or not.
  */
 fun PluginContext.hasPermission(permission: Permission): Boolean =
-    issuedPermits.contains(permission)
+    grantedPermissions.contains(permission)
 
 /**
  * @return [PluginFile] with dedicated folder for plugin.

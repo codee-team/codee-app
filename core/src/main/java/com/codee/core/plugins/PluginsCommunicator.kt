@@ -1,9 +1,9 @@
-package me.neon.codee.core.plugins
+package com.codee.core.plugins
 
 import android.content.Context
-import me.neon.codee.core.plugins.language.Strings
-import me.neon.codee.core.plugins.permissions.Permission
-import me.neon.codee.core.plugins.theme.Theme
+import com.codee.core.plugins.language.Strings
+import com.codee.core.plugins.permissions.Permission
+import com.codee.core.plugins.theme.Theme
 
 interface PluginsCommunicator {
     /**

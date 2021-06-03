@@ -1,4 +1,4 @@
-package me.neon.codee.core.plugins.theme
+package com.codee.core.plugins.theme
 
 open class DarkTheme : Theme {
     override val primary: String = "#1F1B24"

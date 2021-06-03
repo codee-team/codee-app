@@ -8,7 +8,7 @@ android {
     buildToolsVersion = ApplicationConfig.BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId = ApplicationConfig.PACKAGE
+        applicationId = "${ApplicationConfig.PACKAGE}.app"
         minSdk = ApplicationConfig.MIN_SDK_VERSION
         targetSdk = ApplicationConfig.TARGET_SDK_VERSION
         versionCode = Version.APPLICATION_VERSION_INT

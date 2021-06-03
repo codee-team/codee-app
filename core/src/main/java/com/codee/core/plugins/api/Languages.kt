@@ -1,9 +1,9 @@
-package me.neon.codee.core.plugins.api
+package com.codee.core.plugins.api
 
-import me.neon.codee.core.plugins.Plugin
-import me.neon.codee.core.plugins.PluginContext
-import me.neon.codee.core.plugins.language.DefaultStrings
-import me.neon.codee.core.plugins.language.Strings
+import com.codee.core.plugins.Plugin
+import com.codee.core.plugins.PluginContext
+import com.codee.core.plugins.language.DefaultStrings
+import com.codee.core.plugins.language.Strings
 
 private val stringsSource: MutableList<LocalizedStrings> = mutableListOf(
     LocalizedStrings(

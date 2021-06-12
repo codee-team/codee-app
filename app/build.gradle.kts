@@ -55,10 +55,6 @@ dependencies {
     implementation(activityCompose)
     testImplementation(jUnit)
     androidTestImplementation(composeJUNIT)
-    implementation(kScriptRuntime)
     implementation(codeeCore)
-    implementation(reflection)
-    implementation(scriptUtil)
-    implementation(scriptingCompiler)
     implementation(scriptingDependencies)
 }

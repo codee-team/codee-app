@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "Codee"
 include(":app")
 include(":core")
+include(":plugin-api")

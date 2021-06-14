@@ -1,6 +1,9 @@
 package com.codee.plugins.api
 
+import com.codee.plugins.api.settings.PluginSettings
+import com.codee.plugins.api.settings.PluginSettingsBuilder
 import java.io.File
+
 
 public interface PluginContext {
     /**
@@ -20,4 +23,9 @@ public interface PluginContext {
      * @return [Themes].
      */
     public val themes: Themes
+
+    /**
+     * Invoked when user goes to the settings to build plugin preferences list
+     */
+    public fun settings(block: PluginSettingsBuilder.() -> Unit)
 }

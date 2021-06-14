@@ -54,6 +54,7 @@ dependencies {
     implementation(androidxLifecycle)
     implementation(activityCompose)
     implementation(codeeCore)
+    implementation(pluginAPI)
     implementation(scriptingDependencies)
     implementation(coroutines)
     testImplementation(jUnit)

@@ -6,6 +6,10 @@ import org.gradle.kotlin.dsl.DependencyHandlerScope
 import org.gradle.kotlin.dsl.kotlin
 import org.gradle.kotlin.dsl.project
 
+
+val DependencyHandlerScope.coroutines: String
+    get() = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.COROUTINES}"
+
 val DependencyHandlerScope.androidKtCore: String
     get() = "androidx.core:core-ktx:1.5.0"
 

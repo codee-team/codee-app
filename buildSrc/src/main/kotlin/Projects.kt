@@ -29,7 +29,7 @@ fun Project.coreDeploy() {
             libraryArtifactId = "core"
             libraryComponents = "release"
             libraryGroup = ApplicationConfig.PACKAGE
-            libraryVersion = Version.APPLICATION_VERSION_NAME
+            libraryVersion = ApplicationConfig.APPLICATION_VERSION_NAME
             deployTaskName = "release"
         }
     }

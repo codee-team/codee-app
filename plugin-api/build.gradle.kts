@@ -4,7 +4,7 @@ plugins {
 
 
 group = "${ApplicationConfig.PACKAGE}.plugins.api"
-version = Version.APPLICATION_VERSION_NAME
+version = ApplicationConfig.APPLICATION_VERSION_NAME
 
 kotlin {
     explicitApi()

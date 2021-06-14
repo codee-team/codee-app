@@ -11,8 +11,8 @@ android {
         applicationId = "${ApplicationConfig.PACKAGE}.app"
         minSdk = ApplicationConfig.MIN_SDK_VERSION
         targetSdk = ApplicationConfig.TARGET_SDK_VERSION
-        versionCode = Version.APPLICATION_VERSION_INT
-        versionName = Version.APPLICATION_VERSION_NAME
+        versionCode = ApplicationConfig.APPLICATION_VERSION_INT
+        versionName = ApplicationConfig.APPLICATION_VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -53,8 +53,10 @@ dependencies {
     implementation(composeUITooling)
     implementation(androidxLifecycle)
     implementation(activityCompose)
-    testImplementation(jUnit)
-    androidTestImplementation(composeJUNIT)
     implementation(codeeCore)
     implementation(scriptingDependencies)
+    implementation(coroutines)
+
+    testImplementation(jUnit)
+    androidTestImplementation(composeJUNIT)
 }

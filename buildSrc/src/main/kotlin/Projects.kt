@@ -2,7 +2,9 @@ import `fun`.kotlingang.deploy.Deploy
 import `fun`.kotlingang.deploy.DeployConfiguration
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
+import org.gradle.kotlin.dsl.buildscript
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.repositories
 import org.gradle.util.GUtil.loadProperties
 import java.io.File
 
@@ -32,5 +34,16 @@ fun Project.coreDeploy() {
             libraryVersion = ApplicationConfig.APPLICATION_VERSION_NAME
             deployTaskName = "release"
         }
+    }
+}
+
+fun Project.defaultBuildScript() = buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath(androidBuildTools)
+        classpath(kotlinGradlePlugin)
     }
 }

@@ -9,9 +9,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.codee.app.strings.Strings
+import androidx.compose.ui.tooling.preview.Preview
+import com.codee.core.strings.Strings
 
 
+@Preview
 @Composable
 fun StringsComposable() {
     val strings by remember { Strings }

@@ -38,15 +38,14 @@ android {
     }
 }
 
-/**
- * Enables deploy for `core` module.
- */
-coreDeploy()
-
 dependencies {
     implementation(androidKtCore)
     implementation(appCompat)
     implementation(composeUI)
+    implementation(kScript)
+    implementation(scriptingDependencies)
+    implementation(pluginAPI)
+    implementation(kds)
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {

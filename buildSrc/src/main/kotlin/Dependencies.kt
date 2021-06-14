@@ -51,3 +51,9 @@ val DependencyHandlerScope.androidBuildTools: String
 
 val DependencyHandlerScope.kotlinGradlePlugin: String
     get() = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN}"
+
+val DependencyHandlerScope.kds: String get() = "fun.kotlingang.kds:json-files:1.0.1"
+
+val DependencyHandlerScope.kScript get() = "fun.kotlingang.kscript:kscript:0.1.0"
+
+val DependencyHandlerScope.pluginAPI get() = project(":plugin-api")

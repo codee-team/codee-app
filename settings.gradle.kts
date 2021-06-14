@@ -4,6 +4,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/")
+        maven("https://maven.kotlingang.fun")
     }
 }
 rootProject.name = "Codee"

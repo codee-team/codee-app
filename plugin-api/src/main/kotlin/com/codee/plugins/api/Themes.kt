@@ -1,29 +1,27 @@
 package com.codee.plugins.api
 
-import com.codee.plugins.api.annotations.PermissionRequired
-import com.codee.plugins.api.permissions.RemoveOtherThemesPermission
-import com.codee.plugins.api.themes.Theme
+import com.codee.plugins.api.themes.DarkThemeColors
+import com.codee.plugins.api.themes.LightThemeColors
 import com.codee.plugins.api.themes.ThemeColors
 
 public interface Themes {
     /**
-     * @return [List] of [ThemeColors] with all registered in app themes.
+     * Applies theme [colors] to app in forced way.
+     * @param colors - theme colors.
      */
-    public val all: List<Theme>
+    public fun setTheme(colors: ThemeColors)
 
     /**
-     * Adds theme.
-     * @param name - name of theme.
-     * @param themeColors - theme colors.
-     * @return [Boolean] is added or not.
+     * Sets dark theme for application (will be applied if user
+     * has chosen dark theme or it picked up by system).
+     * @param colors - dark theme colors.
      */
-    public fun addTheme(name: String, themeColors: ThemeColors): Boolean
+    public fun setDarkTheme(colors: DarkThemeColors)
 
     /**
-     * Removes theme by [name].
-     * @param name - name of theme.
-     * @return [Boolean] is removed or not.
+     * Sets light theme for application (will be applied if user has
+     * chosen light theme or it picked up by system).
+     * @param colors - light theme colors.
      */
-    @PermissionRequired(RemoveOtherThemesPermission::class)
-    public fun removeTheme(name: String): Boolean
+    public fun setLightTheme(colors: LightThemeColors)
 }

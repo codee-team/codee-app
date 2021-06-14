@@ -56,7 +56,6 @@ dependencies {
     implementation(codeeCore)
     implementation(scriptingDependencies)
     implementation(coroutines)
-
     testImplementation(jUnit)
     androidTestImplementation(composeJUNIT)
 }

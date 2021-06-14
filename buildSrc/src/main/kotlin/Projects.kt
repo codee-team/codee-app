@@ -36,14 +36,3 @@ fun Project.coreDeploy() {
         }
     }
 }
-
-fun Project.defaultBuildScript() = buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath(androidBuildTools)
-        classpath(kotlinGradlePlugin)
-    }
-}

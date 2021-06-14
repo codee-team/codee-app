@@ -1,5 +1,6 @@
 package com.codee.plugins.api
 
+import com.codee.plugins.api.files.VirtualRootDirectory
 import java.io.File
 
 public interface PluginContext {
@@ -7,13 +8,7 @@ public interface PluginContext {
      * Dedicated plugin folder.
      * @return [File] with plugin's folder.
      */
-    public val folder: File
-
-    /**
-     * Permissions controller.
-     * @return [Permissions].
-     */
-    public val permissions: Permissions
+    public val folder: VirtualRootDirectory
 
     /**
      * Themes controller.

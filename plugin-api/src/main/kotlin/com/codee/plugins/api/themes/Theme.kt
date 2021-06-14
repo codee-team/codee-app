@@ -1,6 +1,6 @@
 package com.codee.plugins.api.themes
 
-public data class Theme(
-    public val name: String,
-    public val colors: ThemeColors
+public open class Theme(
+    public open val name: String,
+    public open val colors: ThemeColors
 )

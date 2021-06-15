@@ -11,7 +11,10 @@ All plugins are powered by Kotlin Script. So far we have only made a small proto
 - Code editor without lags (as much as possible)
 - Default plugins for Kotlin & Java
 - Gradle support (as plugin)
-## 📄 License
+## 📖 License
 This application is absolutely free and using [MIT](https://github.com/codee-team/codee-app/blob/master/LICENSE) license.
-## 📞 Contacts
-For questions or suggestions, you can write to me on [Telegram](https://t.me/y9neon) or by [creating an issue](https://github.com/codee-team/codee-app/issues/new).
+
+## ✉️ Contacts
+- <a href="https://t.me/codee_feed"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/768px-Telegram_logo.svg.png" width=16 height=16 /> Telegram Channel</a>
+- <a href="https://t.me/codee_chat"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/768px-Telegram_logo.svg.png" width=16 height=16 /> Telegram Chat</a>
+- <a href="https://github.com/codee-team/codee-app/issues"><img src="https://user-images.githubusercontent.com/32961194/122037088-ebf2f700-cddc-11eb-9052-78e964c680f5.png" width=16 height=16 style="background: green;"/> Github Issues</a>

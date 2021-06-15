@@ -45,6 +45,8 @@ android {
 }
 
 dependencies {
+    implementation(androidxKDS)
+    implementation(sharedKDS)
     implementation(androidKtCore)
     implementation(appCompat)
     implementation(material)

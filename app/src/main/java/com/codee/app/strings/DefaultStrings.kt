@@ -1,4 +1,4 @@
-package com.codee.core.strings
+package com.codee.app.strings
 
 import com.codee.plugins.api.strings.CoreStrings
 

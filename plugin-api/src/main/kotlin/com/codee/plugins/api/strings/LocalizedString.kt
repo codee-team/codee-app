@@ -39,6 +39,6 @@ public class LocalizedString internal constructor (
     private val default: String,
     private val variants: List<LocalizeVariant>
 ) {
-    public fun toString(code: String): String =
+    public operator fun get(code: String): String =
         variants.firstOrNull { it.code == code }?.text ?: default
 }

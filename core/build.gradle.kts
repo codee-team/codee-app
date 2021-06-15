@@ -45,7 +45,7 @@ dependencies {
     implementation(kScript)
     implementation(scriptingDependencies)
     implementation(pluginAPI)
-    implementation(kds)
+    implementation(filesKDS)
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {

@@ -52,7 +52,11 @@ val DependencyHandlerScope.androidBuildTools: String
 val DependencyHandlerScope.kotlinGradlePlugin: String
     get() = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN}"
 
-val DependencyHandlerScope.kds: String get() = "fun.kotlingang.kds:json-files:1.0.1"
+val DependencyHandlerScope.androidxKDS: String get() = "fun.kotlingang.kds:extensions-androidx:1.1.0"
+
+val DependencyHandlerScope.sharedKDS: String get() = "fun.kotlingang.kds:json-shared-preferences:1.1.0"
+
+val DependencyHandlerScope.filesKDS: String get() = "fun.kotlingang.kds:json-files:1.0.1"
 
 val DependencyHandlerScope.kScript get() = "fun.kotlingang.kscript:kscript:0.1.0"
 

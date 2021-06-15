@@ -1,18 +1,18 @@
 package com.codee.plugins.api
 
-import com.codee.plugins.api.strings.IStrings
+import com.codee.plugins.api.strings.CoreStrings
 
 public interface Strings {
     /**
      * Sets strings in forced way.
      * @param strings - localized strings.
      */
-    public fun setStrings(strings: IStrings)
+    public fun setStrings(strings: CoreStrings)
 
     /**
      * Sets strings for [languageCode].
      * @param languageCode - language code of localized strings.
      * @param strings - localized strings.
      */
-    public fun setStrings(languageCode: String, strings: IStrings)
+    public fun setStrings(languageCode: String, strings: CoreStrings)
 }

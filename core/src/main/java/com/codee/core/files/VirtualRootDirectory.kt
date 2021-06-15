@@ -1,6 +1,5 @@
 package com.codee.core.files
 
-import com.codee.plugins.api.files.VirtualParentableDirectory
 import com.codee.plugins.api.files.VirtualRootDirectory
 import java.io.File
 

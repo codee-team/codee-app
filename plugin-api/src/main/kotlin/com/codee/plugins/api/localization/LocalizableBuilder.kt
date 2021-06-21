@@ -1,7 +1,6 @@
 package com.codee.plugins.api.localization
 
 import kotlin.properties.ReadOnlyProperty
-import kotlin.reflect.KProperty
 
 public fun <T> localizable(
     default: T, builder: LocalizableBuilder<T>.() -> Unit
@@ -29,8 +28,8 @@ public open class LocalizableBuilder<T> {
      * }
      * ```
      */
-    public infix fun T.to(locale: Locale) {
-        variants += Localized(locale.languageCode, this)
+    public infix fun T.to(language: Language) {
+        variants += Localized(language.languageCode, this)
     }
 
     internal fun toLocalizable(default: T) = Localizable(default, variants)

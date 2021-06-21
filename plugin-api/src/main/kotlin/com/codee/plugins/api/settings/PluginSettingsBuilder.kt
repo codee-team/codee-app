@@ -1,56 +1,49 @@
 package com.codee.plugins.api.settings
 
-import com.codee.plugins.api.annotations.PluginDSL
-import com.codee.plugins.api.strings.LocalizedString
+import com.codee.plugins.api.localization.string.LocalizedString
 
-
-@PluginDSL
-public interface PluginTriggerBuilder<T> {
-    public fun default(block: () -> T)
-    public fun changed(block: (T) -> Unit)
-}
-
-@PluginDSL
 public interface PluginSettingsBuilder {
-    public fun switch (
-        displayName: LocalizedString,
-        key: String,
-        block: PluginTriggerBuilder<Boolean>.() -> Unit
+    /**
+     * Adds switch setting into app.
+     * @param title - localized title.
+     * @param description - localized description.
+     */
+    public fun switch(
+        title: LocalizedString,
+        description: LocalizedString,
+        block: SettingTriggerBuilder<Boolean>.() -> Unit
     )
 
-    public fun string (
-        displayName: LocalizedString,
-        key: String,
-        block: PluginTriggerBuilder<String>.() -> Unit
+    /**
+     * Adds string input setting into app.
+     * @param title - localized title.
+     * @param description - localized description.
+     */
+    public fun string(
+        title: LocalizedString,
+        description: LocalizedString,
+        block: SettingTriggerBuilder<String>.() -> Unit
     )
 
-    public fun int (
-        displayName: LocalizedString,
-        key: String,
-        block: PluginTriggerBuilder<Int>.() -> Unit
+    /**
+     * Adds int picker setting into app.
+     * @param title - localized title.
+     * @param description - localized description.
+     */
+    public fun int(
+        title: LocalizedString,
+        description: LocalizedString,
+        block: SettingTriggerBuilder<Int>.() -> Unit
     )
 
-    public fun simpleInt (
-        displayName: LocalizedString,
-        key: String,
-        block: PluginTriggerBuilder<Int>.() -> Unit
-    )
-
-    public fun rgbColor (
-        displayName: LocalizedString,
-        key: String,
-        block: PluginTriggerBuilder<UInt>.() -> Unit
-    )
-
-    public fun rgbaColor (
-        displayName: LocalizedString,
-        key: String,
-        block: PluginTriggerBuilder<UInt>.() -> Unit
-    )
-
-    public fun plainText (
-        displayName: LocalizedString,
-        key: String,
-        block: PluginTriggerBuilder<String>.() -> Unit
+    /**
+     * Adds double picker setting into app.
+     * @param title - localized title.
+     * @param description - localized description.
+     */
+    public fun double(
+        title: LocalizedString,
+        description: LocalizedString,
+        block: SettingTriggerBuilder<Double>.() -> Unit
     )
 }

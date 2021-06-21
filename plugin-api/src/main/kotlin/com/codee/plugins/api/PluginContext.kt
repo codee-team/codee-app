@@ -4,7 +4,10 @@ import com.codee.plugins.api.files.VirtualRootDirectory
 import com.codee.plugins.api.settings.PluginSettingsBuilder
 import java.io.File
 
-
+/**
+ * The main class from which any plugin works.
+ * Implicit receiver of script for each plugin.
+ */
 public interface PluginContext {
     /**
      * Dedicated plugin folder.

@@ -58,6 +58,8 @@ dependencies {
     implementation(codeeCore)
     implementation(pluginAPI)
     implementation(scriptingDependencies)
+    implementation(sharedKDS)
+    implementation(filesKDS)
     implementation(coroutines)
     testImplementation(jUnit)
     androidTestImplementation(composeJUNIT)

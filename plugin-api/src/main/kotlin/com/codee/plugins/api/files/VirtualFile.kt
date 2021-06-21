@@ -17,5 +17,4 @@ public interface VirtualFile : FSEntity {
      * Removes file.
      */
     public suspend fun delete()
-
 }

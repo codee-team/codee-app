@@ -8,7 +8,7 @@ import com.codee.plugins.api.localization.string.localizableString
  */
 public abstract class ApplicationLocalization {
     public val projects: LocalizableString by localizableString("Projects") {
-        "Проекты" to  Locale.RUSSIAN
-        "Проєкти" to Locale.UKRAINIAN
+        "Проекты" to  Language.RUSSIAN
+        "Проєкти" to Language.UKRAINIAN
     }
 }

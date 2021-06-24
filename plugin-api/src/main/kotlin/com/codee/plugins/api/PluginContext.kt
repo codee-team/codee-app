@@ -3,7 +3,6 @@ package com.codee.plugins.api
 import com.codee.plugins.api.files.VirtualRootDirectory
 import com.codee.plugins.api.settings.PluginSettingsBuilder
 import java.io.File
-import java.util.*
 
 /**
  * The main class from which any plugin works.

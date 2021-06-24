@@ -26,4 +26,9 @@ public interface PluginContext {
      * Invoked when user goes to the settings to build plugin preferences list
      */
     public fun settings(block: PluginSettingsBuilder.() -> Unit)
+
+    /**
+     * Invoked after plugin running. Should be specified first of all.
+     */
+    public fun metadata(block: PluginMetadata.() -> Unit)
 }

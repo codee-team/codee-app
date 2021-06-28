@@ -14,3 +14,7 @@ kotlin {
         }
     }
 }
+
+dependencies {
+    implementation(app_resources)
+}

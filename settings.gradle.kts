@@ -11,4 +11,4 @@ rootProject.name = "Codee"
 include(":app")
 include(":plugins-core")
 include(":plugins-api")
-include(":app-resources")
+include(":resources")

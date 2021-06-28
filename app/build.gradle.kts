@@ -55,7 +55,6 @@ dependencies {
     implementation(composeUITooling)
     implementation(androidxLifecycle)
     implementation(activityCompose)
-    implementation(codeeCore)
     implementation(pluginAPI)
     implementation(scriptingDependencies)
     implementation(sharedKDS)

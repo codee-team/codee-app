@@ -1,4 +1,5 @@
 @file:Suppress("unused", "ObjectPropertyName")
+
 package com.codee.app.resouces.locale
 
 public class Locale(

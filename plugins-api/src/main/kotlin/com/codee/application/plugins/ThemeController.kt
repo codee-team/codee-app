@@ -1,7 +1,7 @@
 package com.codee.application.plugins
 
-import com.codee.application.theme.DarkThemeColors
-import com.codee.application.theme.LightThemeColors
+import com.codee.app.resouces.theme.DarkThemeColors
+import com.codee.app.resouces.theme.LightThemeColors
 
 public interface ThemeController {
     /**

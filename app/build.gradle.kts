@@ -45,8 +45,6 @@ android {
 }
 
 dependencies {
-    implementation(androidxKDS)
-    implementation(sharedKDS)
     implementation(androidKtCore)
     implementation(appCompat)
     implementation(material)
@@ -55,11 +53,9 @@ dependencies {
     implementation(composeUITooling)
     implementation(androidxLifecycle)
     implementation(activityCompose)
-    implementation(pluginAPI)
-    implementation(scriptingDependencies)
-    implementation(sharedKDS)
-    implementation(filesKDS)
     implementation(coroutines)
+    implementation(`app-core`)
+    implementation(composeNav)
     testImplementation(jUnit)
     androidTestImplementation(composeJUNIT)
 }

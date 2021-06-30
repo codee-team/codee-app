@@ -1,23 +1,33 @@
 package com.codee.app.core
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.core.os.ConfigurationCompat
+import com.codee.app.resouces.locale.Locale
 import com.codee.app.resouces.locale.strings.AppStrings
 
 /**
  * Default localized codee strings.
  */
-object CodeeStrings : AppStrings
+object CodeeStrings : AppStrings()
 
 /**
  * Codee localized strings.
  */
-val appStrings = mutableStateOf<AppStrings>(CodeeStrings)
+val appStrings @Composable get() = remember {
+    mutableStateOf<AppStrings>(CodeeStrings)
+}
 
 /**
- * Converts [MutableState] of [AppStrings] to rememberable state.
+ * Gets user locale and maps it to [Locale].
  */
-@Composable
-fun MutableState<AppStrings>.remember() =
-    androidx.compose.runtime.remember { this }
+val userLocale: Locale
+    get() {
+    val locale = ConfigurationCompat.getLocales(appContext.resources.configuration)[0]
+    return Locale(
+        locale.country.takeUnless { it.isNullOrBlank() },
+        locale.language ?: "en"
+    )
+}
+

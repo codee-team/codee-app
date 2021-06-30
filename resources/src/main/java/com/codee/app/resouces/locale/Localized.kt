@@ -1,5 +1,7 @@
 package com.codee.app.resouces.locale
 
+import kotlin.properties.ReadOnlyProperty
+
 public typealias LocalizedString = Localized<String>
 
 /**
@@ -12,12 +14,18 @@ public class Localized<T>(
     public val variants: Map<Locale, T>
 )
 
+public fun <T> Localized<T>.mapLocalized(locale: Locale): T =
+    variants[locale] ?: default
+
 /**
  * Builder for [Localized].
  * @param default - default localized object.
  */
-public fun <T> localized(default: T, builder: LocalizedBuilder<T>.() -> Unit): Localized<T> {
-    return Localized(default, LocalizedBuilder<T>().apply(builder).variants)
+public fun <T> localized(default: T, builder: LocalizedBuilder<T>.() -> Unit): ReadOnlyProperty<Any?, T> {
+    val localized = Localized(default, LocalizedBuilder<T>().apply(builder).variants)
+    return ReadOnlyProperty { _, _ ->
+        return@ReadOnlyProperty localized.mapLocalized(currentLocale)
+    }
 }
 
 public class LocalizedBuilder<T> internal constructor() {

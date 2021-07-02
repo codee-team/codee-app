@@ -1,7 +1,7 @@
-package com.codee.app.resouces.theme
+package com.codee.app.resources.theme
 
-import com.codee.app.resouces.Color
-import com.codee.app.resouces.Hex
+import com.codee.app.resources.Color
+import com.codee.app.resources.Hex
 
 public open class DarkThemeColors : ThemeColors {
     override val primary: Color get() = Hex("#272727")

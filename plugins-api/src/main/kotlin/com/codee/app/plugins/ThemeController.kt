@@ -1,4 +1,4 @@
-package com.codee.application.plugins
+package com.codee.app.plugins
 
 import com.codee.app.resouces.theme.DarkThemeColors
 import com.codee.app.resouces.theme.LightThemeColors

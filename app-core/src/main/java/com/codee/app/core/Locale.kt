@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.core.os.ConfigurationCompat
-import com.codee.app.resouces.locale.Locale
-import com.codee.app.resouces.locale.strings.AppStrings
+import com.codee.app.resources.locale.Locale
+import com.codee.app.resources.locale.strings.AppStrings
 
 /**
  * Default localized codee strings.

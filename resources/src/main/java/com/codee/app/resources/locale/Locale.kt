@@ -1,6 +1,6 @@
 @file:Suppress("unused", "ObjectPropertyName")
 
-package com.codee.app.resouces.locale
+package com.codee.app.resources.locale
 
 public class Locale(
     public val countryCode: String?,

@@ -1,6 +1,6 @@
-package com.codee.app.resouces.theme
+package com.codee.app.resources.theme
 
-import com.codee.app.resouces.Color
+import com.codee.app.resources.Color
 
 /**
  * Codee theme colors.

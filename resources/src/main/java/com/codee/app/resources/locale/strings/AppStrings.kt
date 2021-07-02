@@ -1,7 +1,7 @@
-package com.codee.app.resouces.locale.strings
+package com.codee.app.resources.locale.strings
 
-import com.codee.app.resouces.locale.Locale
-import com.codee.app.resouces.locale.localized
+import com.codee.app.resources.locale.Locale
+import com.codee.app.resources.locale.localized
 
 public abstract class AppStrings {
     public open val projects: String by localized("Projects") {

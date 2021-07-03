@@ -3,7 +3,7 @@ package com.codee.app.plugins
 import com.codee.app.resouces.theme.DarkThemeColors
 import com.codee.app.resouces.theme.LightThemeColors
 
-public interface ThemeController {
+public interface Themes {
     /**
      * Current light theme colors.
      */

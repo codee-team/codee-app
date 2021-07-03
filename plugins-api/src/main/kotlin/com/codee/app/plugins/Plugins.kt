@@ -16,4 +16,9 @@ public interface Plugins {
      * plugins localization (to add localization variants, etc).
      */
     public val localization: PluginsLocalization
+
+    /**
+     * Invokes when all plugins evaluated.
+     */
+    public fun afterEvaluation(block: () -> Unit)
 }

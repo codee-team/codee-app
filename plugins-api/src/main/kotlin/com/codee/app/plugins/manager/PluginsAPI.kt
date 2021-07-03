@@ -22,6 +22,11 @@ public interface PluginsAPI {
      */
     @Throws(PluginTypeConflictException::class)
     public fun <T> register(instance: T)
+
+    /**
+     * Invokes when some type is registered.
+     */
+    public fun <T> whenTypeRegistered(block: T.() -> Unit)
 }
 
 /**

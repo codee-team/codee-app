@@ -1,6 +1,12 @@
 package com.codee.app.plugins
 
+import com.codee.app.plugins.builders.PluginMetadataBuilder
+
 public interface PluginContext {
+    /**
+     * Builds metadata for plugin (name, version, etc).
+     */
+    public fun metadata(block: PluginMetadataBuilder.() -> Unit)
     /**
      * Plugins controller.
      */

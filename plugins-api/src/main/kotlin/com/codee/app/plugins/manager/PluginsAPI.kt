@@ -1,6 +1,7 @@
 package com.codee.app.plugins.manager
 
 import com.codee.app.plugins.data.CompatibilitySettings
+import com.codee.app.plugins.data.PluginContent
 import com.codee.app.plugins.results.Either
 import com.codee.app.plugins.results.WithTypeError
 
@@ -8,7 +9,7 @@ public interface PluginsAPI {
     /**
      * Registers API.
      * @param value - instance of [T].
-     * @param version - version code of API.
+     * @param compatibilitySettings - compatibility settings
      */
     public fun <T> register(value: T, compatibilitySettings: CompatibilitySettings)
 
@@ -18,7 +19,7 @@ public interface PluginsAPI {
      */
     public fun <T> withType(
         version: Int
-    ): Either<T, WithTypeError>
+    ): Either<PluginContent<T>, WithTypeError>
 
     /**
      * Gets type by [T] & [version].
@@ -27,6 +28,6 @@ public interface PluginsAPI {
      */
     public fun <T> whenTypeRegistered(
         version: Int,
-        block: Either<T, WithTypeError>.() -> Unit
+        block: Either<PluginContent<T>, WithTypeError>.() -> Unit
     )
 }

@@ -1,7 +1,6 @@
 package com.codee.app.plugins
 
-import com.codee.app.resouces.theme.DarkThemeColors
-import com.codee.app.resouces.theme.LightThemeColors
+import com.codee.app.resources.theme.*
 
 public interface Themes {
     /**

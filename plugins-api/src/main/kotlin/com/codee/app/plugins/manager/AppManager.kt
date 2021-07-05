@@ -1,6 +1,6 @@
 package com.codee.app.plugins.manager
 
-import com.codee.app.resouces.locale.LocalizedString
+import com.codee.app.resources.locale.strings.LocalizedString
 
 public interface AppManager {
     /**

@@ -2,8 +2,6 @@ package com.codee.app.resources.locale
 
 import kotlin.properties.ReadOnlyProperty
 
-public typealias LocalizedString = Localized<String>
-
 /**
  * Class-wrapper for localization [T].
  * @param default - default localized object.

@@ -1,38 +1,32 @@
 package com.codee.app.plugins.manager
 
-import com.codee.app.plugins.exceptions.PluginTypeConflictException
+import com.codee.app.plugins.data.CompatibilitySettings
+import com.codee.app.plugins.results.Either
+import com.codee.app.plugins.results.WithTypeError
 
 public interface PluginsAPI {
     /**
-     * Gets [T] from registered by plugins APIs and returns it in [block].
-     * @throws NoSuchElementException if there no registered [T].
+     * Registers API.
+     * @param value - instance of [T].
+     * @param version - version code of API.
      */
-    @Throws(NoSuchElementException::class)
-    public fun <T> withType(block: T.() -> Unit)
+    public fun <T> register(value: T, compatibilitySettings: CompatibilitySettings)
 
     /**
-     * @return [Boolean] is [T] registered or not.
+     * Gets type by [T] & [version].
+     * @param version - version of api.
      */
-    public fun <T> isTypeRegistered(): Boolean
+    public fun <T> withType(
+        version: Int
+    ): Either<T, WithTypeError>
 
     /**
-     * Registers [T] in plugins APIs.
-     * @throws [PluginTypeConflictException] if there is conflict with
-     * already registered [T].
+     * Gets type by [T] & [version].
+     * and returns it in [block] when it registered.
+     * @param version - version of api.
      */
-    @Throws(PluginTypeConflictException::class)
-    public fun <T> register(instance: T)
-
-    /**
-     * Invokes when some type is registered.
-     */
-    public fun <T> whenTypeRegistered(block: T.() -> Unit)
+    public fun <T> whenTypeRegistered(
+        version: Int,
+        block: Either<T, WithTypeError>.() -> Unit
+    )
 }
-
-/**
- * Gets [T] only if it registered. If not, just ignores [block].
- */
-public fun <T> PluginsAPI.withTypeIfRegistered(block: T.() -> Unit): Unit =
-    if(isTypeRegistered<T>())
-        withType(block)
-    else Unit

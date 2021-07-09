@@ -60,7 +60,7 @@ val DependencyHandlerScope.filesKDS: String get() = "fun.kotlingang.kds:json-fil
 
 val DependencyHandlerScope.kScript get() = "fun.kotlingang.kscript:kscript:0.1.0"
 
-val DependencyHandlerScope.pluginAPI get() = project(":plugins-api")
+val DependencyHandlerScope.pluginsAPI get() = project(":plugins-api")
 
 val DependencyHandlerScope.composeNav get() = "androidx.navigation:navigation-compose:2.4.0-alpha03"
 

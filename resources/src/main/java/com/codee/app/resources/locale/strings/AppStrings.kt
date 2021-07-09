@@ -4,19 +4,19 @@ import com.codee.app.resources.locale.Locale
 import com.codee.app.resources.locale.localized
 
 public abstract class AppStrings {
-    public open val projects: String by localized("Projects") {
-            Locale.en to "Projects"
-            Locale.ru to "Проекты"
-            Locale.uk to "Проєкти"
-        }
-    public open val project: String by localized("Project") {
-            Locale.en to "Project"
-            Locale.ru to "Проект"
-            Locale.uk to "Проєкт"
-        }
-    public open val createProject: String by localized("Create project") {
-            Locale.en to "Create project"
-            Locale.ru to "Проект"
-            Locale.uk to "Проєкт"
-        }
+    public open val projects: LocalizedString by localized("Projects") {
+        "Projects" to Locale.en
+        "Проєкти" to Locale.uk
+        "Проекты" to Locale.ru
+    }
+    public open val project: LocalizedString by localized("Project") {
+        "Project" to Locale.en
+        "Проект" to Locale.ru
+        "Проєкт" to Locale.uk
+    }
+    public open val createProject: LocalizedString by localized("Create project") {
+        "Create project" to Locale.en
+        "Проєкт" to Locale.uk
+        "Проект" to Locale.ru
+    }
 }

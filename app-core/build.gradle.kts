@@ -35,4 +35,5 @@ dependencies {
     implementation(composeUI)
     implementation(composeMaterial)
     implementation(resources)
+    implementation(pluginsAPI)
 }

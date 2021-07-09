@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     kotlin(Plugin.JVM)
 }
@@ -17,4 +19,10 @@ kotlin {
 
 dependencies {
     implementation(resources)
+    implementation(coroutines)
+}
+
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    languageVersion = "1.5"
 }

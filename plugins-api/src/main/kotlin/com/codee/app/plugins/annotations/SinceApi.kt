@@ -5,6 +5,6 @@ package com.codee.app.plugins.annotations
  * that was specified in the minimum (that is, there is
  * no API on the old versions, that is, the new API).
  */
-@RequiresOptIn("API version check required.", level = RequiresOptIn.Level.ERROR)
+@RequiresOptIn("API version check required.", level = RequiresOptIn.Level.WARNING)
 @Retention(AnnotationRetention.SOURCE)
 public annotation class SinceApi(public val version: Int)

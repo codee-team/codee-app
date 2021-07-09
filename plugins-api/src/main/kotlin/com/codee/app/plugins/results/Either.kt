@@ -21,6 +21,7 @@ public class Either<TSuccess, TError> private constructor(
 public fun <T, E> Either<T, E>.valueOrThrow(): T = value
     ?: throw NullPointerException("value is null.")
 
+@Throws(NullPointerException::class)
 public fun <T, E> Either<T, E>.errorOrThrow(): E = error
     ?: throw NullPointerException("error is null")
 

@@ -53,9 +53,9 @@ dependencies {
     implementation(composeUITooling)
     implementation(androidxLifecycle)
     implementation(activityCompose)
-    implementation(codeeCore)
-    implementation(scriptingDependencies)
     implementation(coroutines)
+    implementation(`app-core`)
+    implementation(composeNav)
     testImplementation(jUnit)
     androidTestImplementation(composeJUNIT)
 }

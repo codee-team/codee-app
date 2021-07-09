@@ -9,5 +9,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Codee"
 include(":app")
-include(":core")
-include(":plugin-api")
+include(":plugins-api")
+include(":resources")
+include(":app-core")

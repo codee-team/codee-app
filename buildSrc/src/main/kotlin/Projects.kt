@@ -2,9 +2,7 @@ import `fun`.kotlingang.deploy.Deploy
 import `fun`.kotlingang.deploy.DeployConfiguration
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
-import org.gradle.kotlin.dsl.buildscript
 import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.repositories
 import org.gradle.util.GUtil.loadProperties
 import java.io.File
 

@@ -4,7 +4,7 @@ Codee (**Code** **e**ditor) - Kotlin-first IDE for android devices written in Ko
 ## Motivation
 There are currently no good and flexible development environments for Android-based mobile devices, so this application will have to solve this problem.
 ## Plugins
-All plugins are powered by Kotlin Script. So far we have only made a small prototype API that does almost nothing in the [plugin-api](plugin-api). Plugin examples you can see [here](https://github.com/codee-team/codee-plugin-examples) (not actual for now, there is example with old API).
+All plugins are powered by Kotlin Script. So far we have only made a small prototype API that does almost nothing in the [plugins-api](plugins-api). Plugin examples you can see [here](https://github.com/codee-team/codee-plugin-examples) (not actual for now, there is example with old API).
 ## TODO
 - Convenient and flexible API for plugins
 - Clear and beautiful interface
@@ -12,7 +12,7 @@ All plugins are powered by Kotlin Script. So far we have only made a small proto
 - Default plugins for Kotlin & Java
 - Gradle support (as plugin)
 ## License
-This application is absolutely free and using [MIT](https://github.com/codee-team/codee-app/blob/master/LICENSE) license.
+This application is absolutely free and using [MIT](LICENSE) license.
 
 ## Contacts
 - <a href="https://t.me/codee_feed"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/768px-Telegram_logo.svg.png" width=16 height=16 /> Telegram Channel</a>

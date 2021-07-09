@@ -9,6 +9,7 @@ public class Either<TSuccess, TError> private constructor(
     public companion object {
         public fun <T> success(value: T): Either<T, Nothing> =
             Either(value, null)
+
         public fun <T> error(error: T): Either<Nothing, T> =
             Either(null, error)
     }

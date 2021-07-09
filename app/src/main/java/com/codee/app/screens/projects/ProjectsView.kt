@@ -1,6 +1,5 @@
 package com.codee.app.screens.projects
 
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable

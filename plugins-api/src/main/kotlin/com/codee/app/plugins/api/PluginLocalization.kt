@@ -8,6 +8,7 @@ public interface PluginLocalization {
      * Compatibility settings of plugin api.
      */
     public val compatibilitySettings: CompatibilitySettings
+
     /**
      * Localizations variants.
      */

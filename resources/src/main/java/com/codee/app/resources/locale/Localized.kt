@@ -30,7 +30,10 @@ public operator fun <T> Localized<T>.get(locale: Locale): T =
  * Builder for [Localized].
  * @param default - default localized object.
  */
-public fun <T> localized(default: T, builder: Localized<T>.() -> Unit): ReadOnlyProperty<Any?, Localized<T>> {
+public fun <T> localized(
+    default: T,
+    builder: Localized<T>.() -> Unit
+): ReadOnlyProperty<Any?, Localized<T>> {
     val localized = Localized(default).apply(builder)
     return ReadOnlyProperty { _, _ ->
         return@ReadOnlyProperty localized

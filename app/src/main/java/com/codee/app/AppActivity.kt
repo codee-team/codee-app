@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
-import com.codee.app.core.extensions.CodeeTheme
+import com.codee.app.resources.CodeeTheme
 import com.codee.app.screens.main.MainView
 
 class AppActivity : ComponentActivity() {

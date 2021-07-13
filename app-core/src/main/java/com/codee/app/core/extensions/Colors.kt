@@ -25,7 +25,7 @@ val lightThemeColors = mutableStateOf(LightThemeColors().toComposeColors())
  */
 val darkThemeColors = mutableStateOf(DarkThemeColors().toComposeColors())
 
-internal fun ThemeColors.toComposeColors() = Colors(
+fun ThemeColors.toComposeColors() = Colors(
     primary.toComposeColor(),
     primaryVariant.toComposeColor(),
     secondary.toComposeColor(),
@@ -41,20 +41,7 @@ internal fun ThemeColors.toComposeColors() = Colors(
     this is LightThemeColors
 )
 
-internal fun Color.toComposeColor() = when (this) {
+fun Color.toComposeColor() = when (this) {
     is Hex -> ComposeColor(AndroidColor.parseColor(hex))
     is RGB -> ComposeColor(AndroidColor.rgb(red, green, blue))
 }
-
-/**
- * Compose representation of codee theme.
- */
-@Composable
-fun CodeeTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit
-) = MaterialTheme(
-    colors = if (darkTheme) remember { darkThemeColors.value }
-    else remember { lightThemeColors.value },
-    content = content
-)

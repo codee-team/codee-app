@@ -47,7 +47,7 @@ val DependencyHandlerScope.scriptingDependencies: Any
     get() = kotlin("scripting-dependencies")
 
 val DependencyHandlerScope.androidBuildTools: String
-    get() = "com.android.tools.build:gradle:7.1.0-alpha02"
+    get() = "com.android.tools.build:gradle:7.1.0-alpha03"
 
 val DependencyHandlerScope.kotlinGradlePlugin: String
     get() = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN}"
@@ -64,9 +64,10 @@ val DependencyHandlerScope.pluginsAPI get() = project(":plugins-api")
 
 val DependencyHandlerScope.composeNav get() = "androidx.navigation:navigation-compose:2.4.0-alpha03"
 
-
 val DependencyHandlerScope.`app-core` get() = project(":app-core")
 
 @Suppress("ObjectPropertyName")
 val DependencyHandlerScope.resources
     get() = project(":resources")
+
+val DependencyHandlerScope.composeAccompanist get() = "com.google.accompanist:accompanist-systemuicontroller:0.13.0"

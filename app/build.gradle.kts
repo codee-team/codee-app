@@ -56,6 +56,8 @@ dependencies {
     implementation(coroutines)
     implementation(`app-core`)
     implementation(composeNav)
+    implementation(resources)
+    implementation(composeAccompanist)
     testImplementation(jUnit)
     androidTestImplementation(composeJUNIT)
 }

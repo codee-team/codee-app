@@ -3,6 +3,8 @@ package com.codee.app.resources.locale.strings
 import com.codee.app.resources.locale.Locale
 import com.codee.app.resources.locale.localized
 
+public object CodeeStrings : AppStrings()
+
 public abstract class AppStrings {
     public open val projects: LocalizedString by localized("Projects") {
         "Projects" to Locale.en

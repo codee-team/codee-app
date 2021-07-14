@@ -3,6 +3,7 @@ package com.codee.app.plugins.api
 import com.codee.app.plugins.api.manager.AppManager
 import com.codee.app.plugins.api.manager.PluginApiManager
 import com.codee.app.plugins.api.manager.PluginLocalizationManager
+import com.codee.app.plugins.api.manager.ProjectsManager
 import com.codee.app.plugins.api.objects.PluginMetadata
 import com.codee.app.plugins.api.objects.PluginMetadataBuilder
 
@@ -27,6 +28,11 @@ public interface Plugin {
      * Plugins localization manager.
      */
     public val localizationManager: PluginLocalizationManager
+
+    /**
+     * Projects manager.
+     */
+    public val projectsManager: ProjectsManager
 }
 
 public fun Plugin.metadata(block: PluginMetadataBuilder.() -> Unit) {

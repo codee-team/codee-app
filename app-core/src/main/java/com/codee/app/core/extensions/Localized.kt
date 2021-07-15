@@ -18,7 +18,7 @@ fun <T> Localized<T>.localize(): T {
     // getLocales returns custom class, not list
     val locales = mutableListOf<Locale>().apply {
         val list = ConfigurationCompat.getLocales(context.resources.configuration)
-        for(i in 1..list.size())
+        for(i in 0 until list.size())
             add(list[i].toCodeeLocale())
     }
 

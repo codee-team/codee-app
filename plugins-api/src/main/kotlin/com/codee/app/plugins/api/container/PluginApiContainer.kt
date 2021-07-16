@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
-public interface PluginApiManager {
+public interface PluginApiContainer {
     /**
      * All registered plugins api.
      */

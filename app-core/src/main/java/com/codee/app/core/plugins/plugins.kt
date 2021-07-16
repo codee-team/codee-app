@@ -67,7 +67,7 @@ private object AppManager : AppContainer {
     override val versionCode: Int = 1
     override val locale: Locale = Locale.en
     override val strings: AppStrings = CodeeStrings
-    override val themeContainer: ThemeContainer = ThemeContainer
+    override val themes: ThemeContainer = ThemeContainer
 }
 
 private object ThemeContainer : ThemeContainer {

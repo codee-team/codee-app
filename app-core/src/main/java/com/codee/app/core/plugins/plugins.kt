@@ -7,10 +7,10 @@ import com.codee.app.core.extensions.toComposeColors
 import com.codee.app.plugins.api.Plugin
 import com.codee.app.plugins.api.PluginApi
 import com.codee.app.plugins.api.PluginLocalization
-import com.codee.app.plugins.api.manager.AppManager
-import com.codee.app.plugins.api.manager.PluginApiManager
-import com.codee.app.plugins.api.manager.PluginLocalizationManager
-import com.codee.app.plugins.api.manager.ThemeManager
+import com.codee.app.plugins.api.container.AppContainer
+import com.codee.app.plugins.api.container.PluginApiManager
+import com.codee.app.plugins.api.container.PluginLocalizationContainer
+import com.codee.app.plugins.api.container.ThemeContainer
 import com.codee.app.plugins.api.objects.PluginMetadata
 import com.codee.app.resources.locale.Locale
 import com.codee.app.resources.theme.DarkThemeColors
@@ -19,9 +19,9 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 
 class Plugin : Plugin {
     override var metadata: PluginMetadata by oneTimeSet()
-    override val app: AppManager = AppManager
+    override val app: AppContainer = AppManager
     override val apiManager: PluginApiManager = PluginApiManager
-    override val localizationManager: PluginLocalizationManager = PluginLocalizationManager
+    override val localizationContainer: PluginLocalizationContainer = PluginLocalizationContainer
 }
 
 private object PluginApiManager : PluginApiManager {
@@ -38,7 +38,7 @@ private object PluginApiManager : PluginApiManager {
 
 }
 
-private object PluginLocalizationManager : PluginLocalizationManager {
+private object PluginLocalizationContainer : PluginLocalizationContainer {
     override val localizations: MutableSharedFlow<PluginLocalization> = MutableSharedFlow()
 
     override fun <T : PluginLocalization> register(instance: T): Boolean {
@@ -51,14 +51,14 @@ private object PluginLocalizationManager : PluginLocalizationManager {
     }
 }
 
-private object AppManager : AppManager {
+private object AppManager : AppContainer {
     override val versionName: String = "1.0"
     override val versionCode: Int = 1
     override val locale: Locale = Locale.en
-    override val themeManager: ThemeManager = ThemeManager
+    override val themeContainer: ThemeContainer = ThemeContainer
 }
 
-private object ThemeManager : ThemeManager {
+private object ThemeContainer : ThemeContainer {
     override var currentLightThemeColors: LightThemeColors = LightThemeColors()
         set(value) {
             lightThemeColors.value = value.toComposeColors()

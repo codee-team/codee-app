@@ -1,8 +1,8 @@
-package com.codee.app.plugins.api.manager
+package com.codee.app.plugins.api.container
 
 import com.codee.app.resources.locale.Locale
 
-public interface AppManager {
+public interface AppContainer {
     /**
      * Version name of application.
      */
@@ -21,5 +21,5 @@ public interface AppManager {
     /**
      * Application theme manager.
      */
-    public val themeManager: ThemeManager
+    public val themeContainer: ThemeContainer
 }

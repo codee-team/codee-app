@@ -1,4 +1,4 @@
-package com.codee.app.plugins.api.manager
+package com.codee.app.plugins.api.container
 
 import com.codee.app.plugins.api.PluginApi
 import kotlinx.coroutines.DelicateCoroutinesApi

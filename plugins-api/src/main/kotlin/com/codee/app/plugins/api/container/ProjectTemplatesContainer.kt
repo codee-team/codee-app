@@ -27,6 +27,7 @@ public interface ProjectsCategory : PluginApi {
  * @param description - localized description of template.
  * @param fields - fields that should be specified by user.
  */
+@Suppress("MemberVisibilityCanBePrivate")
 public class ProjectTemplate(
     public val name: LocalizedString,
     public val description: LocalizedString,

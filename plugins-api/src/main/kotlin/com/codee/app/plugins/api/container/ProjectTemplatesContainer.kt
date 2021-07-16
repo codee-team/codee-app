@@ -10,6 +10,12 @@ import kotlinx.coroutines.flow.SharedFlow
  */
 public interface ProjectTemplatesContainer {
     public val categories: SharedFlow<ProjectsCategory>
+
+    /**
+     * Registers [T] as category.
+     * @param instance - instance of implemented [T].
+     */
+    public fun <T : ProjectsCategory> register(instance: T)
 }
 
 public interface ProjectsCategory : PluginApi {

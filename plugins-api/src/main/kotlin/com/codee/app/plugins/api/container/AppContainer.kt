@@ -22,7 +22,7 @@ public interface AppContainer {
     /**
      * Current application strings.
      */
-    public val string: AppStrings
+    public val strings: AppStrings
 
     /**
      * Application theme manager.

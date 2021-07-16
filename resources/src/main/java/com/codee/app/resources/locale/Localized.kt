@@ -6,7 +6,7 @@ import kotlin.properties.ReadOnlyProperty
  * Class-wrapper for localization [T].
  * @param default - default localized object.
  */
-public class Localized<T> internal constructor(
+public data class Localized<T> internal constructor(
     public val default: T,
     private val _variants: MutableMap<Locale, T> = mutableMapOf()
 ) {

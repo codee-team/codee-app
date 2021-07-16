@@ -1,4 +1,4 @@
-package com.codee.app.plugins.api.manager
+package com.codee.app.plugins.api.container
 
 import com.codee.app.plugins.api.PluginApi
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
-public interface PluginApiManager {
+public interface PluginApiContainer {
     /**
      * All registered plugins api.
      */

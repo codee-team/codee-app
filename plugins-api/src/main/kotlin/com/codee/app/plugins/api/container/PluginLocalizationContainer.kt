@@ -1,9 +1,9 @@
-package com.codee.app.plugins.api.manager
+package com.codee.app.plugins.api.container
 
 import com.codee.app.plugins.api.PluginLocalization
 import kotlinx.coroutines.flow.SharedFlow
 
-public interface PluginLocalizationManager {
+public interface PluginLocalizationContainer {
     /**
      * All registered plugins api.
      */

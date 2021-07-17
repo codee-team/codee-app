@@ -1,11 +1,7 @@
 package com.codee.app.core.extensions
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.Colors
-import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import com.codee.app.resources.Color
 import com.codee.app.resources.Hex
 import com.codee.app.resources.RGB

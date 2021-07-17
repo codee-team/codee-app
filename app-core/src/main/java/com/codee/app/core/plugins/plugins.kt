@@ -5,7 +5,7 @@ import com.codee.app.core.delegates.oneTimeSet
 import com.codee.app.core.extensions.darkThemeColors
 import com.codee.app.core.extensions.lightThemeColors
 import com.codee.app.core.extensions.toComposeColors
-import com.codee.app.plugins.api.Plugin
+import com.codee.app.plugins.api.PluginScope
 import com.codee.app.plugins.api.PluginApi
 import com.codee.app.plugins.api.PluginLocalization
 import com.codee.app.plugins.api.container.*
@@ -20,7 +20,7 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import com.codee.app.plugins.api.container.ProjectTemplatesContainer
 import com.codee.app.resources.locale.strings.AppStrings
 
-class Plugin : Plugin {
+class PluginScope : PluginScope {
     override var metadata: PluginMetadata by oneTimeSet()
     override val app: AppContainer = AppManager
     override val apis: PluginApiContainer = PluginApiContainer

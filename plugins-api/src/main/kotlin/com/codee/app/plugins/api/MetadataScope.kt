@@ -1,12 +1,15 @@
 package com.codee.app.plugins.api
 
 import com.codee.app.resources.locale.strings.LocalizedString
+import kotlinx.coroutines.CoroutineScope
 
 /**
  * Plugin's metadata scope. It is place where plugins declare their names, versions,
  * compatibility settings, etc. Will be in separated file **manifest.codee.kts**.
+ *
+ * Works on [kotlinx.coroutines.Dispatchers.Default] scope.
  */
-public interface MetadataScope {
+public interface MetadataScope : CoroutineScope {
     /**
      * Plugin localized name.
      */

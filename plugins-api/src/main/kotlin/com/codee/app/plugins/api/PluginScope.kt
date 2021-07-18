@@ -4,8 +4,13 @@ import com.codee.app.plugins.api.container.AppContainer
 import com.codee.app.plugins.api.container.PluginApiContainer
 import com.codee.app.plugins.api.container.PluginLocalizationContainer
 import com.codee.app.plugins.api.container.ProjectTemplatesContainer
+import kotlinx.coroutines.CoroutineScope
 
-public interface PluginScope {
+/**
+ * Plugin's **main.codee.kts** scope.
+ * Works on [kotlinx.coroutines.Dispatchers.Main].
+ */
+public interface PluginScope : CoroutineScope {
     /**
      * Application manager.
      */

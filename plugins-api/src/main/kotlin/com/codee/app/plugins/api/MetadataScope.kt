@@ -34,6 +34,11 @@ public interface MetadataScope : CoroutineScope {
      * Codee settings scope.
      */
     public fun codee(block: CodeeScope.() -> Unit)
+
+    /**
+     * Plugin's external dependencies.
+     */
+    public fun dependencies(block: DependenciesScope.() -> Unit)
 }
 
 public interface CodeeScope {

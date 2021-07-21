@@ -54,6 +54,14 @@ val DependencyHandlerScope.kotlinGradlePlugin: String
 
 val DependencyHandlerScope.androidxKDS: String get() = "fun.kotlingang.kds:extensions-androidx:1.1.0"
 
+val DependencyHandlerScope.scriptRuntime get() = kotlin("script-runtime")
+
+val DependencyHandlerScope.compilerEmbeddable get() = kotlin("compiler-embeddable")
+
+val DependencyHandlerScope.scriptUtil get() = kotlin("script-util")
+
+val DependencyHandlerScope.scriptingCompilerEmbeddable get() = kotlin("script-util")
+
 val DependencyHandlerScope.sharedKDS: String get() = "fun.kotlingang.kds:json-shared-preferences:1.1.0"
 
 val DependencyHandlerScope.filesKDS: String get() = "fun.kotlingang.kds:json-files:1.0.1"

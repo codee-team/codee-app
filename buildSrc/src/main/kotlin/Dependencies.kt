@@ -47,7 +47,7 @@ val DependencyHandlerScope.scriptingDependencies: Any
     get() = kotlin("scripting-dependencies")
 
 val DependencyHandlerScope.androidBuildTools: String
-    get() = "com.android.tools.build:gradle:7.1.0-alpha03"
+    get() = "com.android.tools.build:gradle:7.1.0-alpha04"
 
 val DependencyHandlerScope.kotlinGradlePlugin: String
     get() = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN}"

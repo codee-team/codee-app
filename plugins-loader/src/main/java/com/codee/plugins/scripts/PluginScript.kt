@@ -9,7 +9,7 @@ import kotlin.script.experimental.jvm.jvm
 import kotlin.script.experimental.jvm.updateClasspath
 
 @KotlinScript(
-    fileExtension = "codee.kts",
+    fileExtension = "plugin.kts",
     compilationConfiguration = PluginScriptDefinition::class,
     evaluationConfiguration = PluginScriptConfiguration::class
 )

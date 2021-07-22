@@ -1,10 +1,6 @@
 package com.codee.app.core.plugins
 
 import com.codee.app.plugins.api.CodeeCompatibilitySettingsScope
-import com.codee.app.plugins.api.CodeeScope as ICodeeScope
-import com.codee.app.plugins.api.DependenciesScope as IDependenciesScope
-import com.codee.app.plugins.api.MetadataScope as IMetadataScope
-import com.codee.app.plugins.api.PluginScope as IPluginScope
 import com.codee.app.plugins.api.container.AppContainer
 import com.codee.app.plugins.api.container.PluginApiContainer
 import com.codee.app.plugins.api.container.PluginLocalizationContainer
@@ -14,6 +10,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlin.coroutines.CoroutineContext
 import kotlin.properties.Delegates
+import com.codee.app.plugins.api.CodeeScope as ICodeeScope
+import com.codee.app.plugins.api.DependenciesScope as IDependenciesScope
+import com.codee.app.plugins.api.MetadataScope as IMetadataScope
+import com.codee.app.plugins.api.PluginScope as IPluginScope
 
 class PluginScope : IPluginScope {
     override val app: AppContainer

@@ -43,8 +43,10 @@ public class ProjectTemplate(
 public sealed interface Field {
     public sealed interface Input : Field {
         public val hint: LocalizedString
+
         public class TextInput(override val hint: LocalizedString) : Input
         public class NumberInput(override val hint: LocalizedString) : Input
     }
+
     public class Switch(public val text: LocalizedString) : Field
 }

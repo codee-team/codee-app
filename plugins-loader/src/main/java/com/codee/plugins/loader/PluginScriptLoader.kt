@@ -16,6 +16,10 @@ class PluginScriptLoader(scope: PluginScope, classpath: Collection<File>) : File
     private val evaluationConfiguration = PluginScriptConfiguration(scope)
 
     override suspend fun eval(scriptFile: File): ResultWithDiagnostics<EvaluationResult> {
-        return jvmHost.eval(scriptFile.toScriptSource(), compilationConfiguration, evaluationConfiguration)
+        return jvmHost.eval(
+            scriptFile.toScriptSource(),
+            compilationConfiguration,
+            evaluationConfiguration
+        )
     }
 }

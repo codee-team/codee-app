@@ -15,6 +15,10 @@ class MetadataScriptLoader(scope: MetadataScope) : FileScriptLoader {
     private val evaluationConfiguration = ManifestScriptConfiguration(scope)
 
     override suspend fun eval(scriptFile: File): ResultWithDiagnostics<EvaluationResult> {
-        return jvmHost.eval(scriptFile.toScriptSource(), compilationConfiguration, evaluationConfiguration)
+        return jvmHost.eval(
+            scriptFile.toScriptSource(),
+            compilationConfiguration,
+            evaluationConfiguration
+        )
     }
 }

@@ -47,8 +47,9 @@ class PluginLoader {
             )
 
         val metadataResult = MetadataScriptLoader(manifestScope).eval(manifestFile)
+
         val pluginResult = if (!metadataResult.isError())
-            PluginScriptLoader(pluginScope).eval(pluginFile)
+            PluginScriptLoader(pluginScope, listOf()).eval(pluginFile) // TODO classpath adding
         else ResultWithDiagnostics.Failure(
             listOf(
                 ScriptDiagnostic(NOT_LAUNCHED, "Plugin wasn't launched due to error in metadata.")

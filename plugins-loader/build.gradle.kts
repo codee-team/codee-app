@@ -14,4 +14,6 @@ dependencies {
     implementation(scriptRuntime)
     implementation(scriptingCompilerEmbeddable)
     implementation(pluginsAPI)
+    implementation(ktScriptingMavenDependencies)
+    implementation(compilerJvmHost)
 }

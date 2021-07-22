@@ -11,8 +11,8 @@ import kotlinx.coroutines.CoroutineScope
  */
 public interface DependenciesScope : CoroutineScope {
     /**
-     * Implements [coordinates] into **main.codee.kts** file (and in imported scripts).
+     * Implements [coordinates] into **main.plugin.kts** file (and in imported scripts).
      * @param coordinates - coordinates to artifact (jar, e.x: com.example:my-library:1.0).
      */
-    public fun implementation(coordinates: String)
+    public suspend fun implementation(coordinates: String)
 }

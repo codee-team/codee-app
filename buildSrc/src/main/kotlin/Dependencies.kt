@@ -74,6 +74,10 @@ val DependencyHandlerScope.composeNav get() = "androidx.navigation:navigation-co
 
 val DependencyHandlerScope.`app-core` get() = project(":app-core")
 
+val DependencyHandlerScope.ktScriptingMavenDependencies get() = kotlin("scripting-dependencies-maven")
+
+val DependencyHandlerScope.compilerJvmHost get() = kotlin("scripting-jvm-host")
+
 @Suppress("ObjectPropertyName")
 val DependencyHandlerScope.resources
     get() = project(":resources")

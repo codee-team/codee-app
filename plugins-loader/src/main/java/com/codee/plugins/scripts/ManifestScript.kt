@@ -10,7 +10,7 @@ import kotlin.script.experimental.jvm.jvm
 import kotlin.script.experimental.jvm.updateClasspath
 
 @KotlinScript(
-    fileExtension = "codee.kts",
+    fileExtension = "manifest.kts",
     compilationConfiguration = ManifestScriptDefinition::class,
     evaluationConfiguration = ManifestScriptConfiguration::class
 )

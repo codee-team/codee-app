@@ -5,6 +5,8 @@ import com.codee.app.plugins.api.container.PluginApiContainer
 import com.codee.app.plugins.api.container.PluginLocalizationContainer
 import com.codee.app.plugins.api.container.ProjectTemplatesContainer
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlin.coroutines.CoroutineContext
 
 /**
  * Plugin's **main.codee.kts** scope.

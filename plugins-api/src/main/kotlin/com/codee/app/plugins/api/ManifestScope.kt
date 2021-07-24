@@ -52,11 +52,11 @@ public interface CodeeCompatibilitySettingsScope {
      * Minimum supported codee version of plugin (if plugin incompatible with user's version,
      * user will be noticed automatically). It is optional value, but better to specify explicitly.
      */
-    public var minCodeeVersion: Int
+    public var minCodeeVersion: Int?
 
     /**
      * Maximum supported codee version of plugin (optional parameter, in most of cases
      * you don't need to specify)
      */
-    public var maxCodeeVersion: Int
+    public var maxCodeeVersion: Int?
 }

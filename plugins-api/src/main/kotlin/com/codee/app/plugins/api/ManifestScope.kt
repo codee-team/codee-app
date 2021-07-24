@@ -6,10 +6,8 @@ import kotlinx.coroutines.CoroutineScope
 /**
  * Plugin's metadata scope. It is place where plugins declare their names, versions,
  * compatibility settings, etc. Will be in separated file **manifest.codee.kts**.
- *
- * Works on [kotlinx.coroutines.Dispatchers.Default] scope.
  */
-public interface MetadataScope : CoroutineScope {
+public interface ManifestScope {
     /**
      * Plugin localized name.
      */

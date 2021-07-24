@@ -1,6 +1,6 @@
 package com.codee.plugins.loader
 
-import com.codee.app.plugins.api.MetadataScope
+import com.codee.app.plugins.api.ManifestScope
 import com.codee.app.plugins.api.PluginScope
 import java.io.File
 import kotlin.script.experimental.api.ResultWithDiagnostics
@@ -24,7 +24,7 @@ class PluginLoader {
      */
     suspend fun load(
         folder: File,
-        manifestScope: MetadataScope,
+        manifestScope: ManifestScope,
         pluginScope: PluginScope
     ): ResultWithDiagnostics<Unit> {
         val manifestFile = File(folder, "main.manifest.kts")

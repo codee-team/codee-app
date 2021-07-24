@@ -1,6 +1,6 @@
 package com.codee.plugins.loader
 
-import com.codee.app.plugins.api.MetadataScope
+import com.codee.app.plugins.api.ManifestScope
 import com.codee.plugins.scripts.ManifestScriptConfiguration
 import com.codee.plugins.scripts.ManifestScriptDefinition
 import java.io.File
@@ -9,7 +9,7 @@ import kotlin.script.experimental.api.ResultWithDiagnostics
 import kotlin.script.experimental.host.toScriptSource
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 
-class MetadataScriptLoader(scope: MetadataScope) : FileScriptLoader {
+class MetadataScriptLoader(scope: ManifestScope) : FileScriptLoader {
     private val jvmHost = BasicJvmScriptingHost()
     private val compilationConfiguration = ManifestScriptDefinition()
     private val evaluationConfiguration = ManifestScriptConfiguration(scope)

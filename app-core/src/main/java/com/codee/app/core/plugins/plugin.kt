@@ -12,7 +12,7 @@ import kotlin.coroutines.CoroutineContext
 import kotlin.properties.Delegates
 import com.codee.app.plugins.api.CodeeScope as ICodeeScope
 import com.codee.app.plugins.api.DependenciesScope as IDependenciesScope
-import com.codee.app.plugins.api.MetadataScope as IMetadataScope
+import com.codee.app.plugins.api.ManifestScope as IMetadataScope
 import com.codee.app.plugins.api.PluginScope as IPluginScope
 
 class PluginScope : IPluginScope {
@@ -27,7 +27,7 @@ class PluginScope : IPluginScope {
     override val coroutineContext = Dispatchers.Main + Job()
 }
 
-class MetadataScope : IMetadataScope {
+class ManifestScope : IMetadataScope {
     override val coroutineContext: CoroutineContext = Dispatchers.Default + Job()
     override lateinit var name: LocalizedString
     override lateinit var author: String
@@ -58,7 +58,7 @@ class DependenciesScope : IDependenciesScope {
 
 data class Plugin(
     val main: PluginScope,
-    val manifest: MetadataScope,
+    val manifest: ManifestScope,
     val dependencies: DependenciesScope
 )
 

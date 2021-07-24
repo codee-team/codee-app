@@ -1,7 +1,7 @@
 package com.codee.plugins.scripts
 
 import com.codee.app.plugins.api.DependenciesScope
-import com.codee.app.plugins.api.MetadataScope
+import com.codee.app.plugins.api.ManifestScope
 import com.codee.plugins.internal.classpathFrom
 import kotlin.script.experimental.annotations.KotlinScript
 import kotlin.script.experimental.api.*
@@ -18,14 +18,14 @@ abstract class ManifestScript
 
 class ManifestScriptDefinition : ScriptCompilationConfiguration({
     defaultImports("com.codee.plugins.api.*")
-    implicitReceivers(MetadataScope::class)
+    implicitReceivers(ManifestScope::class)
     jvm {
         dependenciesFromClassContext(ManifestScript::class, wholeClasspath = true)
     }
-    updateClasspath(classpathFrom(MetadataScope::class, DependenciesScope::class))
+    updateClasspath(classpathFrom(ManifestScope::class, DependenciesScope::class))
 })
 
-class ManifestScriptConfiguration(metadataScope: MetadataScope) : ScriptEvaluationConfiguration({
+class ManifestScriptConfiguration(manifestScope: ManifestScope) : ScriptEvaluationConfiguration({
     scriptsInstancesSharing(true)
-    implicitReceivers(metadataScope)
+    implicitReceivers(manifestScope)
 })

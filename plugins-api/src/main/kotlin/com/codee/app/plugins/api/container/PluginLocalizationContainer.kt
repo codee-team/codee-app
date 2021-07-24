@@ -1,5 +1,6 @@
 package com.codee.app.plugins.api.container
 
+import com.codee.app.plugins.api.PluginApi
 import com.codee.app.plugins.api.PluginLocalization
 import kotlinx.coroutines.flow.SharedFlow
 
@@ -17,3 +18,13 @@ public interface PluginLocalizationContainer {
      */
     public fun <T : PluginLocalization> register(instance: T): Boolean
 }
+
+public inline fun <reified T : PluginApi> PluginLocalizationContainer.firstWithType(
+    crossinline handler: T.() -> Unit
+) {
+    return registered.firstWithType(handler)
+}
+
+public inline fun <reified T : PluginApi> PluginLocalizationContainer.firstCompatibleWithType(
+    version: Int, crossinline handler: T.() -> Unit
+): Unit = registered.firstCompatibleWithType(version, handler)

@@ -11,7 +11,7 @@ import com.codee.app.plugins.api.container.PluginApiContainer as IPluginApiConta
 internal val registeredApis: MutableSharedFlow<PluginOwned<PluginApi>> = MutableSharedFlow()
 
 class PluginApiContainer(private val plugin: Plugin) : IPluginApiContainer {
-    override val all: SharedFlow<PluginApi> = registeredApis.map { it.value } as SharedFlow<PluginApi>
+    override val registered: SharedFlow<PluginApi> = registeredApis.map { it.value } as SharedFlow<PluginApi>
 
     override fun <T : PluginApi> register(instance: T): Boolean {
         return registeredApis.tryEmit(PluginOwned(plugin, instance))

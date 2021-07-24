@@ -39,4 +39,5 @@ dependencies {
     implementation(pluginsAPI)
     implementation(ktScriptingMavenDependencies)
     implementation(compilerJvmHost)
+    implementation(`app-core`)
 }

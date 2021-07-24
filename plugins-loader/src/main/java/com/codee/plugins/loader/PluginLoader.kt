@@ -1,10 +1,14 @@
 package com.codee.plugins.loader
 
-import com.codee.app.plugins.api.ManifestScope
+import com.codee.app.core.plugins.Dependency
+import com.codee.app.core.plugins.ManifestScope
 import com.codee.app.plugins.api.PluginScope
+import com.codee.plugins.scripts.dependency.resolvers.MavenDependencyResolver
+import com.codee.plugins.scripts.dependency.resolvers.metadata.MavenResolverMetadata
 import java.io.File
 import kotlin.script.experimental.api.ResultWithDiagnostics
 import kotlin.script.experimental.api.ScriptDiagnostic
+import kotlin.script.experimental.api.valueOrNull
 import kotlin.script.experimental.jvm.util.isError
 
 class PluginLoader {
@@ -46,10 +50,15 @@ class PluginLoader {
                 )
             )
 
-        val metadataResult = MetadataScriptLoader(manifestScope).eval(manifestFile)
+        val metadataScriptLoader = MetadataScriptLoader(manifestScope)
+        val metadataResult = metadataScriptLoader.eval(manifestFile)
 
         val pluginResult = if (!metadataResult.isError())
-            PluginScriptLoader(pluginScope, listOf()).eval(pluginFile) // TODO classpath adding
+            PluginScriptLoader(
+                pluginScope,
+                resolveAll(metadataScriptLoader.dependencies.toList())
+            ).eval(pluginFile)
+
         else ResultWithDiagnostics.Failure(
             listOf(
                 ScriptDiagnostic(NOT_LAUNCHED, "Plugin wasn't launched due to error in metadata.")
@@ -61,6 +70,14 @@ class PluginLoader {
         return if (metadataResult.isError() || pluginResult.isError())
             ResultWithDiagnostics.Failure(reports)
         else ResultWithDiagnostics.Success(Unit, reports)
+    }
+
+    private suspend fun resolveAll(dependencies: List<Dependency>): Collection<File> {
+        val mavenResolver = MavenDependencyResolver()
+        return dependencies.mapNotNull {
+            mavenResolver.resolve(MavenResolverMetadata(it.repositories, it.coordinates))
+                .valueOrNull()
+        }.flatten()
     }
 
     companion object Error {

@@ -11,7 +11,7 @@ import com.codee.app.plugins.api.container.PluginLocalizationContainer as IPlugi
 internal val registeredLocalizations: MutableSharedFlow<PluginOwned<PluginLocalization>> = MutableSharedFlow()
 
 class PluginLocalizationContainer(private val plugin: Plugin) : IPluginLocalizationContainer {
-    override val localizations: SharedFlow<PluginLocalization> =
+    override val registered: SharedFlow<PluginLocalization> =
         registeredLocalizations.map { it.value } as SharedFlow<PluginLocalization>
 
     override fun <T : PluginLocalization> register(instance: T): Boolean {

@@ -7,7 +7,7 @@ public interface PluginLocalizationContainer {
     /**
      * All registered plugins api.
      */
-    public val localizations: SharedFlow<PluginLocalization>
+    public val registered: SharedFlow<PluginLocalization>
 
     /**
      * Registers API for external access (you can register multiple

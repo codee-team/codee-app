@@ -15,7 +15,7 @@ internal class OneTimeSetDelegate<T> : ReadWriteProperty<Any?, T> {
     }
 
     override fun setValue(thisRef: Any?, property: KProperty<*>, value: T) {
-        if(this.value == null)
+        if (this.value == null)
             this.value = value
     }
 }

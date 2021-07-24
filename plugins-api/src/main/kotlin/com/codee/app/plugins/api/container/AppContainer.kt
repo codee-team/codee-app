@@ -27,5 +27,5 @@ public interface AppContainer {
     /**
      * Application theme manager.
      */
-    public val themeContainer: ThemeContainer
+    public val themes: ThemeContainer
 }

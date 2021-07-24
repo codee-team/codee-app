@@ -5,7 +5,10 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.selection.selectable
-import androidx.compose.material.*
+import androidx.compose.material.FloatingActionButton
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Add
 import androidx.compose.runtime.Composable
@@ -57,7 +60,9 @@ private fun ProjectItem(name: String) = Row(
 ) {
     Image(
         painter = painterResource(id = R.mipmap.ic_launcher),
-        modifier = Modifier.size(60.dp).padding(12.dp),
+        modifier = Modifier
+            .size(60.dp)
+            .padding(12.dp),
         contentDescription = "test"
     )
     Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center) {

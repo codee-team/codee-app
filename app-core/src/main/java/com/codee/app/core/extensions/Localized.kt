@@ -4,7 +4,6 @@ import androidx.core.os.ConfigurationCompat
 import com.codee.app.core.ContextDI.context
 import com.codee.app.resources.locale.Locale
 import com.codee.app.resources.locale.Localized
-import com.codee.app.resources.locale.get
 
 
 /**
@@ -18,11 +17,11 @@ fun <T> Localized<T>.localize(): T {
     // getLocales returns custom class, not list
     val locales = mutableListOf<Locale>().apply {
         val list = ConfigurationCompat.getLocales(context.resources.configuration)
-        for(i in 0 until list.size())
+        for (i in 1..list.size())
             add(list[i].toCodeeLocale())
     }
 
-    for(locale in locales) {
+    for (locale in locales) {
         val languageCodeMatches = variants
             .filter { (k) -> k.languageCode == locale.languageCode }
         val countryCodeMatches = languageCodeMatches
@@ -32,7 +31,7 @@ fun <T> Localized<T>.localize(): T {
             ?: languageCodeMatches.filter { (k) -> k.countryCode == null }.values.firstOrNull()
             ?: languageCodeMatches.values.firstOrNull()
 
-        if(result != null)
+        if (result != null)
             return result
     }
 

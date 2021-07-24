@@ -32,11 +32,12 @@ android {
 }
 
 dependencies {
-    implementation(androidKtCore)
-    implementation(appCompat)
-    implementation(material)
-    implementation(composeUI)
-    implementation(composeMaterial)
-    implementation(resources)
+    implementation(scriptingDependencies)
+    implementation(scriptUtil)
+    implementation(scriptRuntime)
+    implementation(scriptingCompilerEmbeddable)
     implementation(pluginsAPI)
+    implementation(ktScriptingMavenDependencies)
+    implementation(compilerJvmHost)
+    implementation(`app-core`)
 }

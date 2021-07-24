@@ -13,7 +13,7 @@ public interface PluginApiContainer {
     /**
      * All registered plugins api.
      */
-    public val apis: SharedFlow<PluginApi>
+    public val registered: SharedFlow<PluginApi>
 
     /**
      * Registers API for external access (you can register multiple
@@ -23,6 +23,16 @@ public interface PluginApiContainer {
      */
     public fun <T : PluginApi> register(instance: T): Boolean
 }
+
+public inline fun <reified T : PluginApi> PluginApiContainer.firstWithType(
+    crossinline handler: T.() -> Unit
+) {
+    return registered.firstWithType(handler)
+}
+
+public inline fun <reified T : PluginApi> PluginApiContainer.firstCompatibleWithType(
+    version: Int, crossinline handler: T.() -> Unit
+): Unit = registered.firstCompatibleWithType(version, handler)
 
 /**
  * Gets first registered [T].

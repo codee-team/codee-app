@@ -4,6 +4,7 @@ import com.codee.app.plugins.api.container.AppContainer
 import com.codee.app.plugins.api.container.PluginApiContainer
 import com.codee.app.plugins.api.container.PluginLocalizationContainer
 import com.codee.app.plugins.api.container.ProjectTemplatesContainer
+import com.codee.app.plugins.api.files.DirectoryStorageElement
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlin.coroutines.CoroutineContext
@@ -32,4 +33,9 @@ public interface PluginScope : CoroutineScope {
      * Projects manager.
      */
     public val templates: ProjectTemplatesContainer
+
+    /**
+     * The root directory of plugin dedicated storage.
+     */
+    public val workingDir: DirectoryStorageElement.RootDirectoryStorageElement
 }

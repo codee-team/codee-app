@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.SharedFlow
 public interface PluginLocalizationContainer {
     public val registered: SharedFlow<PluginLocalization>
 
-    public fun <T : PluginLocalization> register(instance: T)
+    public fun <T : PluginLocalization> register(instance: T): Boolean
 }

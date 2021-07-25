@@ -9,15 +9,18 @@ import kotlin.script.experimental.api.ResultWithDiagnostics
 import kotlin.script.experimental.host.toScriptSource
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 
-class PluginScriptLoader(scope: PluginScope, classpath: Collection<File>) : FileScriptLoader {
-
+class ScriptPluginScopeLoader(
+    override val scope: PluginScope,
+    private val file: File,
+    classpath: List<File>
+) : PluginScopeLoader<EvaluationResult> {
     private val jvmHost = BasicJvmScriptingHost()
     private val compilationConfiguration = PluginScriptDefinition(classpath)
     private val evaluationConfiguration = PluginScriptConfiguration(scope)
 
-    override suspend fun eval(scriptFile: File): ResultWithDiagnostics<EvaluationResult> {
+    override suspend fun load(): ResultWithDiagnostics<EvaluationResult> {
         return jvmHost.eval(
-            scriptFile.toScriptSource(),
+            file.toScriptSource(),
             compilationConfiguration,
             evaluationConfiguration
         )

@@ -12,17 +12,18 @@ import kotlin.script.experimental.api.ResultWithDiagnostics
 import kotlin.script.experimental.host.toScriptSource
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 
-class MetadataScriptLoader(private val scope: ManifestScope) : FileScriptLoader {
+class ScriptManifestScopeLoader(override val scope: ManifestScope, private val file: File) :
+    ManifestScopeLoader<EvaluationResult> {
     private val jvmHost = BasicJvmScriptingHost()
     private val compilationConfiguration = ManifestScriptDefinition()
     private val evaluationConfiguration = ManifestScriptConfiguration(scope)
 
     val dependencies: Collection<Dependency> get() = scope.declaredDependencies
 
-    override suspend fun eval(scriptFile: File): ResultWithDiagnostics<EvaluationResult> =
+    override suspend fun load(): ResultWithDiagnostics<EvaluationResult> =
         withContext(Dispatchers.Default) {
             return@withContext jvmHost.eval(
-                scriptFile.toScriptSource(),
+                file.toScriptSource(),
                 compilationConfiguration,
                 evaluationConfiguration
             )

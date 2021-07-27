@@ -15,11 +15,11 @@ import com.codee.app.resources.locale.Localized
  */
 fun <T> Localized<T>.localize(): T {
     // getLocales returns custom class, not list
-    val locales = mutableListOf<Locale>().apply {
+    val locales = mutableListOf<Locale?>().apply {
         val list = ConfigurationCompat.getLocales(context.resources.configuration)
         for (i in 1..list.size())
-            add(list[i].toCodeeLocale())
-    }
+            add(list[i]?.toCodeeLocale())
+    }.filterNotNull()
 
     for (locale in locales) {
         val languageCodeMatches = variants

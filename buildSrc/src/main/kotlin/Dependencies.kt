@@ -82,4 +82,8 @@ val DependencyHandlerScope.compilerJvmHost get() = kotlin("scripting-jvm-host")
 val DependencyHandlerScope.resources
     get() = project(":resources")
 
-val DependencyHandlerScope.composeAccompanist get() = "com.google.accompanist:accompanist-systemuicontroller:0.14.0"
+val DependencyHandlerScope.composeAccompanistSystemUiController
+    get() = "com.google.accompanist:accompanist-systemuicontroller:${Version.COMPOSE_ACCOMPANIST}"
+
+val DependencyHandlerScope.composeAccompanistPager
+    get() = "com.google.accompanist:accompanist-pager:${Version.COMPOSE_ACCOMPANIST}"

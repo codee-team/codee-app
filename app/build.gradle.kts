@@ -57,7 +57,8 @@ dependencies {
     implementation(`app-core`)
     implementation(composeNav)
     implementation(resources)
-    implementation(composeAccompanist)
+    implementation(composeAccompanistSystemUiController)
+    implementation(composeAccompanistPager)
     testImplementation(jUnit)
     androidTestImplementation(composeJUNIT)
 }

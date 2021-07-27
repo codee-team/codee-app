@@ -3,4 +3,5 @@ object Version {
 
     const val COROUTINES = "1.5.0"
     const val COMPOSE = "1.0.0-rc02"
+    const val COMPOSE_ACCOMPANIST = "0.14.0"
 }

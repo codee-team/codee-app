@@ -14,10 +14,10 @@ val DependencyHandlerScope.androidKtCore: String
     get() = "androidx.core:core-ktx:1.5.0"
 
 val DependencyHandlerScope.appCompat: String
-    get() = "androidx.appcompat:appcompat:1.3.0"
+    get() = "androidx.appcompat:appcompat:1.4.0-alpha03"
 
 val DependencyHandlerScope.material: String
-    get() = "com.google.android.material:material:1.3.0"
+    get() = "com.google.android.material:material:1.5.0-alpha01"
 
 val DependencyHandlerScope.composeUI: String
     get() = "androidx.compose.ui:ui:$COMPOSE"
@@ -29,10 +29,10 @@ val DependencyHandlerScope.composeUITooling: String
     get() = "androidx.compose.ui:ui-tooling:$COMPOSE"
 
 val DependencyHandlerScope.androidxLifecycle: String
-    get() = "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+    get() = "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha02"
 
 val DependencyHandlerScope.activityCompose: String
-    get() = "androidx.activity:activity-compose:1.3.0-alpha08"
+    get() = "androidx.activity:activity-compose:1.3.0-rc02"
 
 val DependencyHandlerScope.composeJUNIT: String
     get() = "androidx.compose.ui:ui-test-junit4:$COMPOSE"
@@ -70,7 +70,7 @@ val DependencyHandlerScope.kScript get() = "fun.kotlingang.kscript:kscript:0.1.0
 
 val DependencyHandlerScope.pluginsAPI get() = project(":plugins-api")
 
-val DependencyHandlerScope.composeNav get() = "androidx.navigation:navigation-compose:2.4.0-alpha03"
+val DependencyHandlerScope.composeNav get() = "androidx.navigation:navigation-compose:2.4.0-alpha05"
 
 val DependencyHandlerScope.`app-core` get() = project(":app-core")
 
@@ -82,4 +82,4 @@ val DependencyHandlerScope.compilerJvmHost get() = kotlin("scripting-jvm-host")
 val DependencyHandlerScope.resources
     get() = project(":resources")
 
-val DependencyHandlerScope.composeAccompanist get() = "com.google.accompanist:accompanist-systemuicontroller:0.13.0"
+val DependencyHandlerScope.composeAccompanist get() = "com.google.accompanist:accompanist-systemuicontroller:0.14.0"

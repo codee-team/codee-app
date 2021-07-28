@@ -15,4 +15,9 @@ class RootDirectoryStorageElement(private val origin: File) : IRootDirectoryStor
             else ChildDirectoryStorageElement(origin, file)
         } else throw SecurityException("Unable to get file at ${file.absolutePath}, you don't have such permission.")
     }
+    override val name: String
+        get() = origin.name
+
+    override val path: String
+        get() = "/"
 }

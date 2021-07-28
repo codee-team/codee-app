@@ -1,6 +1,7 @@
 package com.codee.app.plugins.api.files
 
 public sealed interface DirectoryStorageElement : StorageElement {
+
     /**
      * Gets [StorageElement] at current path + [name].
      * @return [StorageElement].

@@ -15,4 +15,10 @@ class EmptyStorageElement(private val origin: File, private val rootDirectory: F
         return FileStorageElement(origin, rootDirectory)
     }
 
+    override val name: String
+        get() = origin.name
+
+    override val path: String
+        get() = origin.path.replace(rootDirectory.path, "")
+
 }

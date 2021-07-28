@@ -21,4 +21,10 @@ class FileStorageElement internal constructor(
         origin.delete()
         return@withContext EmptyStorageElement(origin, rootDirectory)
     }
+
+    override val name: String
+        get() = origin.name
+
+    override val path: String
+        get() = origin.path.replace(rootDirectory.path, "")
 }

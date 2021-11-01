@@ -1,4 +1,5 @@
 [![Hits-of-Code](https://hitsofcode.com/github/codee-team/codee-app)](https://hitsofcode.com/github/codee-team/codee-app/view) ![Issues](https://img.shields.io/github/issues/codee-team/codee-app) ![GitHub pull requests](https://img.shields.io/github/issues-pr/codee-team/codee-app)
+> Project is suspended due to restrictions introduced in 29+ apis.
 # Codee App
 Codee (**Code** **e**ditor) - Kotlin-first IDE for android devices written in Kotlin with plugins support.
 ## Motivation
